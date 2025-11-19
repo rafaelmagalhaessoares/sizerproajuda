@@ -283,11 +283,11 @@ export default function Help() {
       </ol>
 
       <div className="mt-4 p-4 bg-green-50 text-green-700 rounded-lg border border-green-200">
-        ✔ Se a licença estiver ativa, o plugin será liberado automaticamente.
+         Se a licença estiver ativa, o plugin será liberado automaticamente.
       </div>
 
       <div className="mt-3 p-4 bg-red-50 text-red-700 rounded-lg border border-red-200">
-        ✖ Se estiver expirada ou o e-mail for inválido, uma mensagem de erro será exibida.
+         Se estiver expirada ou o e-mail for inválido, uma mensagem de erro será exibida.
       </div>
     </div>
 
@@ -345,6 +345,27 @@ export default function Help() {
         <li>Clique nos “…” para inserir ou editar a equação IDF da região do projeto.</li>
       </ol>
     </div>
+{/* CARD – Validação da Rede */}
+<div className="bg-blue-50 border border-blue-200 text-blue-900 p-5 rounded-xl shadow-sm space-y-2">
+    <h2 className="text-xl font-semibold flex items-center gap-2">
+    Validação da Rede de Drenagem
+  </h2>
+
+  <p className="text-slate-700 leading-relaxed">
+    Antes de iniciar os cálculos, o SizerPro realiza uma <strong>validação completa</strong> da sua rede de drenagem para garantir que todos os trechos estão conectados corretamente e que a topologia da rede está consistente.
+  </p>
+
+  <ul className="list-disc list-inside space-y-2 text-slate-700 leading-relaxed">
+    <li>Verifica se <strong>todos os tubos possuem estrutura de montante e jusante</strong>.</li>
+    <li>Verifica se cada estrutura possui <strong>no máximo 1 tubo de saída</strong>.</li>
+    <li>Confirma a existência de ao menos <strong>um ponto de descarga</strong>.</li>
+    <li>Garante que não existam <strong>partes desconectadas</strong> ou trechos isolados no Pipe Network.</li>
+  </ul>
+
+  <p className="text-slate-700">
+    Caso seja encontrada alguma inconsistência, o SizerPro exibe uma lista com os erros detectados para que você corrija antes de avançar para a etapa de cálculo hidráulico.
+  </p>
+</div>
 
     {/* CARD 3 – IDF + Comandos (unificado) */}
 <div className="bg-white shadow-lg rounded-xl p-6 border border-slate-200 space-y-6">
@@ -451,6 +472,9 @@ export default function Help() {
   Se o valor <strong>for plausível</strong> → equação válida  
   <br />
   Se aparecer <strong>zero</strong> → erro de sintaxe.
+  <p>  
+    Ao abrir a janela, o campo de resultado aparecerá em branco mesmo. Basta alterar algum número da equação ou simplesmente teclar "espaço" no fim da equação e ele vai preencher o resultado padrão. 
+</p>
 </p>
 
 {/* Imagem dentro do card */}
@@ -731,27 +755,23 @@ Tc_total = Tc (bacia) + Tp (tubos a montante)
   </h1>
 
   {/* DESCRIÇÃO DO MÓDULO */}
-  <p className="text-slate-700 leading-relaxed mt-4">
-    Ao clicar no botão <strong>“Calcular Esgoto”</strong>, o SizerPro lê automaticamente os dados
-    do <strong>Pipe Network</strong> do Civil 3D (diâmetros, declividades, comprimentos,
-    estruturas de montante e jusante etc.) e combina essas informações com
-    os <strong>parâmetros de projeto</strong> definidos no painel lateral: população, k₁, k₂,
-    cota per capita, coeficiente de retorno, infiltração e demais valores previstos na NBR 9649.
-  </p>
+<p className="text-slate-700 leading-relaxed mt-4">
+  Ao clicar em <strong>“Calcular Esgoto”</strong>, o SizerPro lê todos os dados do 
+  <strong> Pipe Network</strong> (diâmetros, declividades, comprimentos e estruturas) e aplica os 
+  parâmetros de projeto definidos no painel lateral.
+</p>
 
-  <p className="text-slate-700 leading-relaxed mt-3">
-    Com base nesses dados, o plugin executa os cálculos conforme a
-    <strong> NBR 9649</strong>, determinando vazões de contribuição, vazões máximas,
-    velocidades, tensões trativas e todas as verificações hidráulicas necessárias
-    para o correto dimensionamento da rede de esgoto.
-  </p>
+<p className="text-slate-700 leading-relaxed mt-3">
+  Com essas informações, o plugin executa automaticamente os cálculos da
+  <strong> NBR 9649</strong>, gerando vazões, velocidades, tensões trativas e demais verificações
+  hidráulicas da rede.
+</p>
 
-  <p className="text-slate-700 leading-relaxed mt-3">
-    O resultado é exibido em uma <strong>tabela interativa</strong>, onde você pode visualizar,
-    revisar e editar os principais parâmetros do dimensionamento
-    (vazões, declividades, tensões trativas, infiltração, velocidades, entre outros),
-    facilitando ajustes finos até que toda a rede atenda aos critérios de projeto.
-  </p>
+<p className="text-slate-700 leading-relaxed mt-3">
+  Os resultados são exibidos em uma <strong>tabela interativa</strong> para conferência e ajustes
+  rápidos, facilitando o dimensionamento completo da rede de esgoto.
+</p>
+
 </div>
 
 
@@ -901,7 +921,7 @@ Tc_total = Tc (bacia) + Tp (tubos a montante)
 
     {/* COMO O CÁLCULO É FEITO */}
     <div className="bg-white/80 backdrop-blur-sm shadow-lg rounded-2xl p-7 border border-slate-200 space-y-6">
-      <h1 className="text-2xl font-bold text-slate-900">Como o cálculo é feito — Passo a Passo Interno</h1>
+      <h1 className="text-2xl font-bold text-slate-900">Como o cálculo é feito:</h1>
 
       <div className="space-y-5">
 
@@ -1282,7 +1302,7 @@ Vc = 6 × sqrt(g × Rh)
 </h1>
 
 <p className="text-slate-700">
-  O módulo de Escavação do SizerPro calcula automaticamente volumes de vala, 
+  O módulo de Escavação do SizerPro calcula automaticamente volumes de escavação, 
   berço e reaterro de cada trecho de tubulação da sua rede de drenagem ou esgoto, 
   utilizando diretamente os dados do Pipe Network do Civil 3D.
 </p>
@@ -1298,7 +1318,7 @@ Vc = 6 × sqrt(g × Rh)
     
     {/* COMO FUNCIONA */}
     <div className="bg-white shadow-lg rounded-xl p-6 border border-slate-200 space-y-5">
-      <h1 className="text-xl font-semibold">🧩 Como o módulo funciona</h1>
+      <h1 className="text-xl font-semibold">Como o módulo funciona:</h1>
 
       <p>Ao abrir o comando Escavação, o SizerPro:</p>
 
@@ -1338,7 +1358,7 @@ Vc = 6 × sqrt(g × Rh)
 
     {/* PARÂMETROS AUTOMÁTICOS */}
     <div className="bg-white shadow-lg rounded-xl p-6 border border-slate-200 space-y-4">
-      <h1 className="text-xl font-semibold">⚙️ Parâmetros que o SizerPro lê automaticamente</h1>
+      <h1 className="text-xl font-semibold"> Parâmetros que o SizerPro lê automaticamente</h1>
 
       <p>Esses valores vêm direto do Civil 3D:</p>
 
@@ -1351,54 +1371,121 @@ Vc = 6 × sqrt(g × Rh)
 
       <p>
         O usuário <strong>não precisa preencher nada disso manualmente</strong>.
-        O módulo mantém tudo sincronizado com o desenho através do botão <strong>Recarregar Rede</strong>.
       </p>
     </div>
 
     {/* PARÂMETROS EDITÁVEIS */}
-    <div className="bg-white shadow-lg rounded-xl p-6 border border-slate-200 space-y-4">
-      <h1 className="text-xl font-semibold">🛠️ Parâmetros editáveis pelo usuário</h1>
+<div className="bg-white shadow-lg rounded-xl p-6 border border-slate-200 space-y-4">
+  <h1 className="text-xl font-semibold"> Parâmetros editáveis pelo usuário</h1>
 
-      <p>
-        Os itens abaixo impactam diretamente o cálculo de volumes e podem ser ajustados individualmente ou para toda a rede usando:
+  <p className="text-slate-700">
+    Os parâmetros abaixo influenciam diretamente o cálculo dos volumes de escavação,
+    berço e reaterro. Você pode ajustá-los individualmente por trecho ou aplicar para
+    toda a rede.
+  </p>
+
+  <ol className="list-decimal ml-6 space-y-4">
+
+    {/* LARGURA DA BASE */}
+    <li>
+      <strong>Largura da Base da vala (m)</strong><br />
+      É a largura do fundo da escavação — depois de considerar o talude,
+      é onde a seção inferior da vala se estabiliza.
+      Impacta diretamente o volume de corte.
+    </li>
+
+    {/* LARGURA DO BERÇO */}
+    <li>
+      <strong>Largura do Berço (m)</strong><br />
+      Região de apoio do tubo, normalmente preenchida com material granular.
+      Sua largura influencia o volume de berço e o formato da vala.
+    </li>
+
+    {/* ALTURA DO BERÇO */}
+    <li>
+      <strong>Altura do Berço (m)</strong><br />
+      Espessura do material de apoio localizado abaixo do tubo.
+      Afeta o volume total de berço e o nível da base da escavação.
+    </li>
+
+    {/* TIPO DE TALUDE */}
+    <li>
+      <strong>Tipo de Talude</strong>
+      <ul className="list-disc ml-6 mt-1 text-slate-700">
+        <li><strong>Vertical</strong> — paredes retas e sem abertura lateral.</li>
+        <li><strong>Inclinado</strong> — paredes inclinadas para estabilidade e segurança.</li>
+      </ul>
+    </li>
+
+    {/* INCLINAÇÃO H:V */}
+    <li>
+      <strong>Inclinação H:V</strong><br />
+      <span className="text-slate-700">
+        Usada apenas quando o talude é inclinado.  
+        A relação <strong>H:V (Horizontal : Vertical)</strong> define o quanto a vala se abre
+        lateralmente conforme a profundidade.  
+        Exemplo: <strong>1,5H:1V</strong> → a cada 1 m de profundidade, a escavação abre 1,5 m para cada lado.
+      </span>
+    </li>
+
+    {/* CARD DA IMAGEM – AGORA COMO PARTE DOS PARÂMETROS */}
+    <li>
+      <strong>Representação Visual da Seção da Vala</strong><br />
+
+      <div className="flex justify-center my-4">
+        <img 
+          src="/VALA.png"
+          alt="Representação da seção da vala"
+          className="rounded-lg border border-slate-300 w-48"
+        />
+      </div>
+
+      <p className="text-slate-700 leading-relaxed">
+        A imagem acima mostra como cada parâmetro influencia a geometria da vala:
       </p>
 
-      <p>→ botão direito → <strong>Definir Todos</strong></p>
+      <ul className="list-disc list-inside space-y-2 text-slate-700 leading-relaxed mt-2">
 
-      <ol className="list-decimal ml-6 space-y-3">
         <li>
-          <strong>Largura da Base da vala (m)</strong><br />
-          Fundo escavado onde o tubo será apoiado.
+          <strong>Profundidade Média</strong> — distância da superfície ao fundo da vala,
+          usada para calcular o volume total escavado.
         </li>
 
         <li>
-          <strong>Largura do Berço (m)</strong><br />
-          Região específica de apoio e acomodação do tubo.
+          <strong>Largura da Base</strong> — Largura total da base da vala.
         </li>
 
         <li>
-          <strong>Altura do Berço (m)</strong><br />
-          Altura de material de apoio sob o tubo.
+          <strong>Berço</strong> — material compactado onde o tubo é apoiado.
         </li>
 
         <li>
-          <strong>Tipo de Talude</strong>
-          <ul className="list-disc ml-6 mt-1">
-            <li>Vertical</li>
-            <li>Inclinado</li>
-          </ul>
+          <strong>Largura do Berço</strong> — Largura que considera apenas o tamanho do berço e não a largura total da base da vala. Imaginemos um cenário onde, por algum motivo, foi necessário fazer uma vala mais larga, mas não necessariamente o berço precisará ter a largura total e apenas a largura suficiente para acomodar o tubo.
         </li>
 
         <li>
-          <strong>Inclinação H:V</strong><br />
-          Utilizada apenas quando o talude é inclinado.
+          <strong>Reaterro</strong> — solo utilizado para preencher a vala após a instalação do tubo.
         </li>
-      </ol>
-    </div>
+
+        <li>
+          <strong>Taludes Laterais</strong> — quando inclinados, aumentam a abertura lateral da vala
+          e, portanto, o volume de escavação.
+        </li>
+
+      </ul>
+
+      <p className="text-slate-700 mt-2">
+        Todos esses elementos combinados são utilizados pelo SizerPro para calcular com precisão
+        os volumes de corte, berço e reaterro em cada trecho da sua rede.
+      </p>
+    </li>
+
+  </ol>
+</div>
 
     {/* CÁLCULOS AUTOMÁTICOS */}
     <div className="bg-white shadow-lg rounded-xl p-6 border border-slate-200 space-y-6">
-      <h1 className="text-xl font-semibold">🧮 Cálculos realizados automaticamente</h1>
+      <h1 className="text-xl font-semibold">Cálculos realizados automaticamente:</h1>
 
       {/* Área da seção */}
       <div>
@@ -1447,11 +1534,72 @@ Volume = Área da seção × Comprimento
         <pre className="bg-slate-900 text-green-300 p-4 rounded text-sm overflow-x-auto">
 Reaterro = Escavação − Volume do tubo − Volume do berço
         </pre>
+        
       </div>
+      <p>A altura considerada para cálculo da área da seção transversal é a profundidade média entre o início e final do trecho.</p>
     </div>
 
-  </section>
+    {/* EXPORTAÇÕES — Escavação */}
+    <div className="bg-white shadow-lg rounded-xl p-6 border border-slate-200 space-y-6">
+
+      <h1 className="text-xl font-semibold text-slate-900">📤 Exportações da Tabela de Escavação</h1>
+
+      <p className="text-slate-700">
+        O SizerPro permite exportar toda a sua tabela de escavação — incluindo 
+        volumes individuais e o resumo total — em dois formatos práticos: 
+        <strong> Excel </strong> e <strong> HTML </strong>.
+      </p>
+
+      <div>
+        <h3 className="font-semibold">📤 Exportar para Excel</h3>
+        <p className="text-slate-700 leading-relaxed">
+          Gera um arquivo <strong>.xlsx</strong> contendo:
+        </p>
+
+        <ul className="list-disc ml-6 mt-2 text-slate-700 space-y-1">
+          <li>Todas as colunas visíveis da tabela</li>
+          <li>Volumes de escavação, berço e reaterro por trecho</li>
+          <li>Profundidades, áreas e geometrias de cada seção</li>
+          <li>Resumo total no final do arquivo</li>
+          <li>Formatação pronta para orçamento e relatórios</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 className="font-semibold">🌐 Exportar HTML</h3>
+        <p className="text-slate-700 leading-relaxed">
+          Gera um arquivo visual <strong>.html</strong> com layout profissional, ideal para:
+        </p>
+
+        <ul className="list-disc ml-6 mt-2 text-slate-700 space-y-1">
+          <li>Enviar para cliente</li>
+          <li>Anexar em memoriais</li>
+          <li>Imprimir direto</li>
+          <li>Visualizar sem precisar de Excel</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 className="font-semibold">📦 Resumo de Materiais / Quantitativos</h3>
+
+        <p className="text-slate-700">Inclui automaticamente:</p>
+
+        <ul className="list-disc ml-6 mt-2 text-slate-700 space-y-1">
+          <li>Volume total de escavação (m³)</li>
+          <li>Volume total de berço (m³)</li>
+          <li>Volume total de reaterro (m³)</li>
+        </ul>
+      </div>
+
+    </div>
+
+  </section> 
+
+  
 )}
+
+
+
 
 
        {/* ======================================================================= */}
@@ -1460,34 +1608,83 @@ Reaterro = Escavação − Volume do tubo − Volume do berço
 
 {tab === "resumo" && (
   <section className="max-w-4xl space-y-10 animate-fadeIn">
+{/* TÍTULO */}
+<div className="bg-white shadow-lg rounded-xl p-6 border border-slate-200">
+  <h1 className="text-3xl font-bold flex items-center gap-3 text-slate-900">
+    📊 Resumo de Quantitativos
+  </h1>
 
-    {/* TÍTULO */}
-    <div className="bg-white shadow-lg rounded-xl p-6 border border-slate-200">
-      <h1 className="text-3xl font-bold flex items-center gap-3 text-slate-900">
-        📊 Resumo de Quantitativos
-      </h1>
-    </div>
+  <p className="mt-4 text-slate-700">
+    O módulo de <strong>Resumo de Quantitativos</strong> do SizerPro reúne em um único painel
+    todas as informações essenciais de tubos e estruturas da sua rede de drenagem ou esgoto,
+    agrupando automaticamente por diâmetros, descrições, faixas de profundidade e prefixos.
+  </p>
+
+  <p className="text-slate-700 mt-2">
+    Ele permite visualizar, organizar e exportar rapidamente tabelas completas de  
+     <strong> tubos</strong> e <strong>estruturas</strong>, gerar relatórios em Excel ou HTML,
+    expandir/recolher grupos e identificar padrões da rede com clareza — tudo direto do Civil 3D,
+    sem precisar criar planilhas manualmente.
+  </p>
+</div>
+
 
     {/* PAINEL 1 */}
-    <div className="bg-white shadow-lg rounded-xl p-6 border border-slate-200 space-y-3">
-      <h2 className="text-xl font-semibold">📦 Painel 1 — Tubos</h2>
-      <p>Agrupamento por faixa, part size, descrição ou nome inicial.</p>
-    </div>
+<div className="bg-white shadow-lg rounded-xl p-6 border border-slate-200 space-y-3">
+  <h2 className="text-xl font-semibold">Painel 1 — Tubos</h2>
 
-    {/* PAINEL 2 */}
-    <div className="bg-white shadow-lg rounded-xl p-6 border border-slate-200 space-y-3">
-      <h2 className="text-xl font-semibold">🏗️ Painel 2 — Estruturas</h2>
-      <p>Agrupamento por nome, descrição, part size ou prefixo.</p>
-    </div>
+  <p className="text-slate-700">
+    Este painel exibe um resumo completo de todos os tubos da rede selecionada,
+    organizado automaticamente em uma tabela dinâmica. Cada linha representa um
+    agrupamento de tubos que possuem o mesmo diâmetro e a mesma descrição
+    (Part Size), mostrando também a quantidade total de trechos e o
+    comprimento acumulado em metros.
+  </p>
 
-    {/* EXPORTAÇÕES — ORIGINAL */}
-    <div className="bg-white shadow-lg rounded-xl p-6 border border-slate-200 space-y-3">
-      <h2 className="text-xl font-semibold">📤 Exportações</h2>
-      <ul className="list-disc ml-6">
-        <li>Exportar Excel</li>
-        <li>Exportar HTML</li>
-      </ul>
-    </div>
+  {/* IMAGEM */}
+  <div className="pt-4">
+    <img
+            src="resumo_tubos.png"
+
+      alt="Resumo de tubos no SizerPro"
+      className="rounded-lg shadow-md border border-slate-200 mx-auto"
+    />
+  </div>
+</div>
+
+  {/* PAINEL 2 */}
+<div className="bg-white shadow-lg rounded-xl p-6 border border-slate-200 space-y-3">
+  <h2 className="text-xl font-semibold">Painel 2 — Estruturas</h2>
+
+  <p className="text-slate-700">
+    Exibe todas as estruturas da rede em uma árvore organizada, agrupando por
+    faixa de profundidade, Part Size, descrição ou prefixo do nome.
+  </p>
+
+  <p className="text-slate-700">
+    Para cada estrutura, o SizerPro identifica o tipo (circular ou retangular),
+    suas dimensões internas, nome do Civil 3D e profundidade, mostrando tudo
+    de forma clara dentro de cada grupo.
+  </p>
+
+  <p className="text-slate-700">
+    Você pode definir quantas letras do prefixo deseja usar (ex.: PVD = 3,
+    PVDR = 4) para separar tipos diferentes de estruturas. Os grupos podem ser
+    expandidos ou recolhidos com um clique.
+  </p>
+
+
+  {/* IMAGEM */}
+  <div className="pt-4">
+    <img
+      src="resumo_estruturas.png"
+      alt="Exemplo de agrupamento de estruturas no SizerPro"
+      className="rounded-lg shadow-md border border-slate-200 mx-auto"
+    />
+  </div>
+</div>
+
+
 
     {/* NOVO CONTEÚDO INSERIDO — 100% IDENTICO AO QUE VOCÊ ENVIOU */}
     <div className="bg-white shadow-lg rounded-xl p-6 border border-slate-200 space-y-6">
