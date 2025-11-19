@@ -12,7 +12,7 @@ import {
 
 
 export default function Help() {
-  const [tab, setTab] = useState("licenciamento");
+  const [tab, setTab] = useState("apresentacao");
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
