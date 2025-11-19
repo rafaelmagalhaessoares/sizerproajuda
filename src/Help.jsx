@@ -171,33 +171,54 @@ export default function Help() {
       </h2>
 
       <ul className="grid sm:grid-cols-2 gap-6 text-slate-700">
-        
-        <li className="p-4 rounded-xl border border-slate-200 bg-slate-50 hover:bg-white transition shadow-sm">
-          <strong className="text-blue-700">🔐 Licenciamento</strong>
-          <p className="text-sm mt-1">Validação por e-mail, sincronização online e controle por dispositivo.</p>
-        </li>
 
-        <li className="p-4 rounded-xl border border-slate-200 bg-slate-50 hover:bg-white transition shadow-sm">
-          <strong className="text-blue-700">💧 Drenagem</strong>
-          <p className="text-sm mt-1">Método Racional e Fantolli, IDF, vazões acumuladas e hidráulica parcial.</p>
-        </li>
+  {/* LICENCIAMENTO */}
+  <li
+    onClick={() => { setTab("licenciamento"); setMenuOpen(false); }}
+    className="cursor-pointer p-4 rounded-xl border border-slate-200 bg-slate-50 hover:bg-white transition shadow-sm"
+  >
+    <strong className="text-blue-700">🔐 Licenciamento</strong>
+    <p className="text-sm mt-1">Validação por e-mail, sincronização online e controle por dispositivo.</p>
+  </li>
 
-        <li className="p-4 rounded-xl border border-slate-200 bg-slate-50 hover:bg-white transition shadow-sm">
-          <strong className="text-blue-700">🚽 Esgoto</strong>
-          <p className="text-sm mt-1">NBR 9649, tensões trativas, infiltração, contribuições e modo montante-jusante.</p>
-        </li>
+  {/* DRENAGEM */}
+  <li
+    onClick={() => { setTab("drenagem"); setMenuOpen(false); }}
+    className="cursor-pointer p-4 rounded-xl border border-slate-200 bg-slate-50 hover:bg-white transition shadow-sm"
+  >
+    <strong className="text-blue-700">💧 Drenagem</strong>
+    <p className="text-sm mt-1">Método Racional e Fantolli, IDF, vazões acumuladas e hidráulica parcial.</p>
+  </li>
 
-        <li className="p-4 rounded-xl border border-slate-200 bg-slate-50 hover:bg-white transition shadow-sm">
-          <strong className="text-blue-700">🏗️ Escavação</strong>
-          <p className="text-sm mt-1">Volumes de vala, berço, taludes e controle geométrico completo.</p>
-        </li>
+  {/* ESGOTO */}
+  <li
+    onClick={() => { setTab("esgoto"); setMenuOpen(false); }}
+    className="cursor-pointer p-4 rounded-xl border border-slate-200 bg-slate-50 hover:bg-white transition shadow-sm"
+  >
+    <strong className="text-blue-700">🚽 Esgoto</strong>
+    <p className="text-sm mt-1">NBR 9649, tensões trativas, infiltração, contribuições e modo montante-jusante.</p>
+  </li>
 
-        <li className="p-4 rounded-xl border border-slate-200 bg-slate-50 hover:bg-white transition shadow-sm col-span-full">
-          <strong className="text-blue-700">📊 Resumo de Quantitativos</strong>
-          <p className="text-sm mt-1">Agrupamento automático, somatórios inteligentes e exportações profissionais.</p>
-        </li>
+  {/* ESCAVAÇÃO */}
+  <li
+    onClick={() => { setTab("escavacao"); setMenuOpen(false); }}
+    className="cursor-pointer p-4 rounded-xl border border-slate-200 bg-slate-50 hover:bg-white transition shadow-sm"
+  >
+    <strong className="text-blue-700">🏗️ Escavação</strong>
+    <p className="text-sm mt-1">Volumes de vala, berço, taludes e controle geométrico completo.</p>
+  </li>
 
-      </ul>
+  {/* RESUMO */}
+  <li
+    onClick={() => { setTab("resumo"); setMenuOpen(false); }}
+    className="cursor-pointer p-4 rounded-xl border border-slate-200 bg-slate-50 hover:bg-white transition shadow-sm col-span-full"
+  >
+    <strong className="text-blue-700">📊 Resumo de Quantitativos</strong>
+    <p className="text-sm mt-1">Agrupamento automático, somatórios inteligentes e exportações profissionais.</p>
+  </li>
+
+</ul>
+
     </div>
 
     {/* VANTAGENS */}
