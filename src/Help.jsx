@@ -10,88 +10,104 @@ import {
   Hammer,
 } from "lucide-react";
 
+
 export default function Help() {
   const [tab, setTab] = useState("licenciamento");
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <div className="w-full min-h-screen bg-slate-50 text-slate-800 flex">
 
-      {/* SIDEBAR */}
-      <aside className="w-64 bg-slate-900 text-slate-100 p-6 space-y-4 flex-shrink-0
-                sticky top-0 h-screen overflow-y-auto">
-
-        <h2 className="text-lg font-semibold mb-4 flex items-center gap-2">
-          <BookOpen size={20} /> Menu
-        </h2>
-
-        <nav className="space-y-2">
-
-        <button
-  onClick={() => setTab("apresentacao")}
-  className={`w-full text-left px-4 py-2 rounded-lg transition ${
-    tab === "apresentacao" ? "bg-blue-600" : "hover:bg-slate-700"
-  }`}
+      {/* BOTÃO MOBILE – aparece apenas no celular */}
+<button
+  className="md:hidden fixed top-4 left-4 z-50 bg-slate-900 text-white p-2 rounded-lg shadow-lg"
+  onClick={() => setMenuOpen(true)}
 >
-  Apresentação
+  ☰
 </button>
 
-          <button
-            onClick={() => setTab("licenciamento")}
-            className={`w-full text-left px-4 py-2 rounded-lg transition ${
-              tab === "licenciamento"
-                ? "bg-blue-600"
-                : "hover:bg-slate-700"
-            }`}
-          >
-            Licenciamento
-          </button>
+{/* OVERLAY – fecha ao clicar fora */}
+{menuOpen && (
+  <div
+    className="fixed inset-0 bg-black/40 z-40 md:hidden"
+    onClick={() => setMenuOpen(false)}
+  />
+)}
 
-          <button
-            onClick={() => setTab("drenagem")}
-            className={`w-full text-left px-4 py-2 rounded-lg transition ${
-              tab === "drenagem"
-                ? "bg-blue-600"
-                : "hover:bg-slate-700"
-            }`}
-          >
-            Drenagem
-          </button>
+{/* SIDEBAR */}
+<aside
+  className={`
+    w-64 bg-slate-900 text-slate-100 p-6 space-y-4 flex-shrink-0
+    h-screen overflow-y-auto
+    fixed md:static top-0 left-0 z-50
+    transform transition-transform duration-300
+    ${menuOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"}
+  `}
+>
 
-          <button
-            onClick={() => setTab("esgoto")}
-            className={`w-full text-left px-4 py-2 rounded-lg transition ${
-              tab === "esgoto"
-                ? "bg-blue-600"
-                : "hover:bg-slate-700"
-            }`}
-          >
-            Esgoto
-          </button>
+  <h2 className="text-lg font-semibold mb-4 flex items-center gap-2">
+    <BookOpen size={20} /> Menu
+  </h2>
 
-          <button
-            onClick={() => setTab("escavacao")}
-            className={`w-full text-left px-4 py-2 rounded-lg transition ${
-              tab === "escavacao"
-                ? "bg-blue-600"
-                : "hover:bg-slate-700"
-            }`}
-          >
-            Escavação
-          </button>
+  <nav className="space-y-2">
 
-          <button
-            onClick={() => setTab("resumo")}
-            className={`w-full text-left px-4 py-2 rounded-lg transition ${
-              tab === "resumo"
-                ? "bg-blue-600"
-                : "hover:bg-slate-700"
-            }`}
-          >
-            Resumo de Quantitativos
-          </button>
+    <button
+      onClick={() => { setTab("apresentacao"); setMenuOpen(false); }}
+      className={`w-full text-left px-4 py-2 rounded-lg transition ${
+        tab === "apresentacao" ? "bg-blue-600" : "hover:bg-slate-700"
+      }`}
+    >
+      Apresentação
+    </button>
 
-        </nav>
-      </aside>
+    <button
+      onClick={() => { setTab("licenciamento"); setMenuOpen(false); }}
+      className={`w-full text-left px-4 py-2 rounded-lg transition ${
+        tab === "licenciamento" ? "bg-blue-600" : "hover:bg-slate-700"
+      }`}
+    >
+      Licenciamento
+    </button>
+
+    <button
+      onClick={() => { setTab("drenagem"); setMenuOpen(false); }}
+      className={`w-full text-left px-4 py-2 rounded-lg transition ${
+        tab === "drenagem" ? "bg-blue-600" : "hover:bg-slate-700"
+      }`}
+    >
+      Drenagem
+    </button>
+
+    <button
+      onClick={() => { setTab("esgoto"); setMenuOpen(false); }}
+      className={`w-full text-left px-4 py-2 rounded-lg transition ${
+        tab === "esgoto" ? "bg-blue-600" : "hover:bg-slate-700"
+      }`}
+    >
+      Esgoto
+    </button>
+
+    <button
+      onClick={() => { setTab("escavacao"); setMenuOpen(false); }}
+      className={`w-full text-left px-4 py-2 rounded-lg transition ${
+        tab === "escavacao" ? "bg-blue-600" : "hover:bg-slate-700"
+      }`}
+    >
+      Escavação
+    </button>
+
+    <button
+      onClick={() => { setTab("resumo"); setMenuOpen(false); }}
+      className={`w-full text-left px-4 py-2 rounded-lg transition ${
+        tab === "resumo" ? "bg-blue-600" : "hover:bg-slate-700"
+      }`}
+    >
+      Resumo de Quantitativos
+    </button>
+
+  </nav>
+</aside>
+
 
       {/* MAIN CONTENT */}
       <main className="flex-1 p-10 overflow-y-auto max-w-4xl mx-auto">
