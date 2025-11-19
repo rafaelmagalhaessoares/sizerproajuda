@@ -17,7 +17,9 @@ export default function Help() {
     <div className="w-full min-h-screen bg-slate-50 text-slate-800 flex">
 
       {/* SIDEBAR */}
-      <aside className="w-64 bg-slate-900 text-slate-100 p-6 space-y-4 flex-shrink-0">
+      <aside className="w-64 bg-slate-900 text-slate-100 p-6 space-y-4 flex-shrink-0
+                sticky top-0 h-screen overflow-y-auto">
+
         <h2 className="text-lg font-semibold mb-4 flex items-center gap-2">
           <BookOpen size={20} /> Menu
         </h2>
@@ -290,7 +292,8 @@ export default function Help() {
     {/* CARD 1 – Dimensionamento */}
     <div className="bg-white shadow-lg rounded-xl p-6 border border-slate-200 space-y-4">
       <h1 className="text-3xl font-bold flex items-center gap-3 text-slate-900">
-        Dimensionamento de Redes de Drenagem
+      ▶️ Como usar o módulo de Drenagem — Passo a Passo
+
       </h1>
 
       <p className="text-slate-700 leading-relaxed">
@@ -346,11 +349,17 @@ export default function Help() {
       <h2 className="text-xl font-semibold flex items-center gap-2">📘 Comandos aceitos na equação</h2>
 
       <ul className="list-disc ml-6 text-slate-700 space-y-1">
-        <li><code>Math.Pow(x, y)</code> → potenciação</li>
-        <li><code>Math.Log(x)</code> → logaritmo natural</li>
-        <li><code>Math.Exp(x)</code> → exponencial</li>
-        <li>Operadores normais: <code>+ - * / ()</code></li>
-      </ul>
+  <li><strong><code>Math.Pow(x, y)</code></strong> → usado para elevar um número à potência desejada. Exemplo: <code>Math.Pow(2, 3)</code> calcula 2³ = 8.</li>
+
+  <li><strong><code>Math.Log(x)</code></strong> → retorna o logaritmo natural de x (log base e). Exemplo: <code>Math.Log(Math.E)</code> retorna 1, pois ln(e) = 1.</li>
+
+  <li><strong><code>Math.Exp(x)</code></strong> → calcula e elevado a x. Exemplo: <code>Math.Exp(2)</code> retorna 7.389, que é e².</li>
+
+  <li><strong>Operadores normais: <code>+ - * / ()</code></strong> → permitem somar, subtrair, multiplicar, dividir e organizar a ordem da equação. Exemplo: <code>(2 + 3) * 4</code> resulta em 20.</li>
+</ul>
+
+
+
     </div>
 
     {/* CARD 5 – Dica */}
@@ -469,10 +478,15 @@ Tc_total = Tc (bacia) + Tp (tubos a montante)
       </pre>
 
       <h3 className="font-semibold">1. Tempo de Concentração (Tc)</h3>
-      <ul className="list-disc ml-6 text-slate-700 space-y-1">
-        <li>É obtido das bacias associadas as estruturas</li>
-        <li>Se houver múltiplas bacias associadas a uma mesma estrutura → usa o maior Tc</li>
-      </ul>
+<ul className="list-disc ml-6 text-slate-700 space-y-1">
+  <li>É obtido das bacias associadas às estruturas.</li>
+  <li>Se houver múltiplas bacias associadas a uma mesma estrutura → usa-se o maior Tc.</li>
+  <li>Representa o tempo que a água leva para percorrer toda a bacia até o ponto de saída.</li>
+  <li>Influencia diretamente a intensidade da chuva (IDF) usada no cálculo.</li>
+  <li>Unidade normalmente em minutos.</li>
+  <li>O SizerPro calcula automaticamente o Tc lido do Civil 3D ou definido na equação do usuário.</li>
+</ul>
+
 
       <h3 className="font-semibold">2. Tempo de Percurso (Tp)</h3>
       <p>É o tempo que a água leva para percorrer o tubo. É a Velocidade / Comprimento.</p>
@@ -763,7 +777,7 @@ Tc_total = Tc (bacia) + Tp (tubos a montante)
 
           <h3 className="font-semibold mt-2">🔹 Contribuição inicial (início de plano)</h3>
           <pre className="bg-slate-900 text-green-300 p-4 rounded-lg text-sm overflow-x-auto">
-Qdom,início = (N_lotes * H * taxa_crescimento * cota_per_capita * Cr) / 86400
+Qdom,início = (N_lotes * H * taxa_crescimento * cota_per_capita / 86400
           </pre>
 
           <h3 className="font-semibold mt-3">🔹 Contribuição final (final de plano)</h3>
@@ -851,11 +865,14 @@ Qmín = 0,0015 m³/s
 
       <h3 className="font-semibold">Equações utilizadas</h3>
 
-      <pre className="bg-slate-900 text-green-300 p-4 rounded-lg text-sm overflow-x-auto">
-V = (1/n) × Rh^(2/3) × S^(1/2)
-Q = A × V
-θ = 2 × acos((r - y) / r)
-      </pre>
+      <pre className="bg-slate-900 text-green-300 p-4 rounded-xl">
+  <code>
+    V = (1/n) × Rh^(2/3) × S^(1/2) <br />
+    Q = A × V <br />
+    θ = 2 × acos((r - y) / r)
+  </code>
+</pre>
+
     </div>
 
     {/* NORMAS */}
@@ -912,7 +929,6 @@ Vc = 6 × sqrt(g × Rh)
 <div className="bg-white/80 backdrop-blur-sm shadow-lg rounded-2xl p-7 border border-slate-200">
   <h1 className="text-xl font-bold mb-4 text-slate-900">🧾 Colunas do Cálculo de Esgoto</h1>
 
-  <p className="text-slate-700 mb-4">A seguir, <strong>todo o conteúdo original</strong>, coluna por coluna:</p>
 
   {/* TABELA MODERNA (MESMO ESTILO DA DRENAGEM) */}
   <div className="overflow-hidden rounded-xl border border-slate-200 shadow-sm">
