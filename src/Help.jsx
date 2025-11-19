@@ -291,7 +291,7 @@ export default function Help() {
 
     {/* CARD 1 – Dimensionamento */}
     <div className="bg-white shadow-lg rounded-xl p-6 border border-slate-200 space-y-4">
-      <h1 className="text-3xl font-bold flex items-center gap-3 text-slate-900">
+    <h1 className="text-3xl font-extrabold flex items-center gap-3 text-slate-900 tracking-tight">
       ▶️ Como usar o módulo de Drenagem — Passo a Passo
 
       </h1>
@@ -375,34 +375,43 @@ export default function Help() {
     </div>
 
     {/* CARD 6 – Validação */}
-    <div className="bg-white shadow-lg rounded-xl p-6 border border-slate-200 space-y-3">
-      <h2 className="text-xl font-semibold flex items-center gap-2">🔎 Validação Automática da IDF</h2>
+<div className="bg-white shadow-lg rounded-xl p-6 border border-slate-200 space-y-3">
+  <h2 className="text-xl font-semibold flex items-center gap-2">🔎 Validação Automática da IDF</h2>
 
-      <p className="text-slate-700">Abaixo do campo da equação, o programa exibe um valor de teste para:</p>
+  <p className="text-slate-700">Abaixo do campo da equação, o programa exibe um valor de teste para:</p>
 
-      <ul className="list-disc ml-6 text-slate-700">
-        <li>TR = 10 anos</li>
-        <li>TC = 10 minutos</li>
-      </ul>
+  <ul className="list-disc ml-6 text-slate-700">
+    <li>TR = 10 anos</li>
+    <li>TC = 10 minutos</li>
+  </ul>
 
-      <p className="text-slate-700">
-        Se o valor <strong>for plausível</strong> → equação válida  
-        <br />
-        Se aparecer <strong>zero</strong> → erro de sintaxe.
-      </p>
-    </div>
+  <p className="text-slate-700">
+    Se o valor <strong>for plausível</strong> → equação válida  
+    <br />
+    Se aparecer <strong>zero</strong> → erro de sintaxe.
+  </p>
+</div>
 
-    {/* CARD 7 – Atenção */}
-    <div className="bg-yellow-50 border border-yellow-300 text-yellow-900 p-5 rounded-xl shadow-sm space-y-2">
-      <h2 className="text-xl font-semibold">⚠️ Atenção Importante</h2>
+{/* CARD 6.1 – Exemplo Visual da Validação */}
+<div className="bg-white shadow-lg rounded-xl border border-slate-200 p-4">
+  <img
+    src="/validacao-idf.png"
+    alt="Exemplo da Validação Automática da IDF"
+    className="rounded-lg shadow-md w-full"
+  />
+</div>
 
-      <ul className="list-disc ml-6 space-y-1">
-        <li>Sempre use <strong>ponto</strong> como separador decimal.</li>
-        <li>Variáveis aceitas: <strong>TR</strong> e <strong>TC</strong>.</li>
-        <li>Qualquer outro nome gera erro.</li>
-        <li>A drenagem só é calculada se a equação for válida.</li>
-      </ul>
-    </div>
+{/* CARD 7 – Atenção */}
+<div className="bg-yellow-50 border border-yellow-300 text-yellow-900 p-5 rounded-xl shadow-sm space-y-2">
+  <h2 className="text-xl font-semibold">⚠️ Atenção Importante</h2>
+
+  <ul className="list-disc ml-6 space-y-1">
+    <li>Sempre use <strong>ponto</strong> como separador decimal.</li>
+    <li>Variáveis aceitas: <strong>TR</strong> e <strong>TC</strong>.</li>
+    <li>Qualquer outro nome gera erro.</li>
+    <li>A drenagem só é calculada se a equação for válida.</li>
+  </ul>
+</div>
 
     {/* CARD 8 – Cálculo Hidrológico */}
     <div className="bg-white shadow-lg rounded-xl p-6 border border-slate-200 space-y-5">
