@@ -724,12 +724,36 @@ Tc_total = Tc (bacia) + Tp (tubos a montante)
 {tab === "esgoto" && (
   <section className="max-w-4xl space-y-10 animate-fadeIn">
 
-    {/* TÍTULO */}
-    <div className="bg-white/80 backdrop-blur-sm shadow-xl rounded-2xl p-7 border border-slate-200">
-      <h1 className="text-3xl font-extrabold flex items-center gap-3 text-slate-900 tracking-tight">
-        ▶️ Como usar o módulo de esgoto — Passo a Passo
-      </h1>
-    </div>
+   {/* TÍTULO */}
+<div className="bg-white/80 backdrop-blur-sm shadow-xl rounded-2xl p-7 border border-slate-200">
+  <h1 className="text-3xl font-extrabold flex items-center gap-3 text-slate-900 tracking-tight">
+    ▶️ Como usar o módulo de Esgoto — Passo a Passo
+  </h1>
+
+  {/* DESCRIÇÃO DO MÓDULO */}
+  <p className="text-slate-700 leading-relaxed mt-4">
+    Ao clicar no botão <strong>“Calcular Esgoto”</strong>, o SizerPro lê automaticamente os dados
+    do <strong>Pipe Network</strong> do Civil 3D (diâmetros, declividades, comprimentos,
+    estruturas de montante e jusante etc.) e combina essas informações com
+    os <strong>parâmetros de projeto</strong> definidos no painel lateral: população, k₁, k₂,
+    cota per capita, coeficiente de retorno, infiltração e demais valores previstos na NBR 9649.
+  </p>
+
+  <p className="text-slate-700 leading-relaxed mt-3">
+    Com base nesses dados, o plugin executa os cálculos conforme a
+    <strong> NBR 9649</strong>, determinando vazões de contribuição, vazões máximas,
+    velocidades, tensões trativas e todas as verificações hidráulicas necessárias
+    para o correto dimensionamento da rede de esgoto.
+  </p>
+
+  <p className="text-slate-700 leading-relaxed mt-3">
+    O resultado é exibido em uma <strong>tabela interativa</strong>, onde você pode visualizar,
+    revisar e editar os principais parâmetros do dimensionamento
+    (vazões, declividades, tensões trativas, infiltração, velocidades, entre outros),
+    facilitando ajustes finos até que toda a rede atenda aos critérios de projeto.
+  </p>
+</div>
+
 
     {/* PASSO 1 */}
     <div className="bg-white/80 backdrop-blur-sm shadow-lg rounded-2xl p-6 border border-slate-200 space-y-4">
@@ -1249,24 +1273,29 @@ Vc = 6 × sqrt(g × Rh)
 {tab === "escavacao" && (
   <section className="max-w-4xl space-y-10 animate-fadeIn">
 
-    {/* TÍTULO */}
-    <div className="bg-white shadow-lg rounded-xl p-6 border border-slate-200">
-      <h1 className="text-3xl font-bold flex items-center gap-3 text-slate-900">
-        🏗️ Escavação — Como funciona o módulo e como utilizar
-      </h1>
-    </div>
+   {/* TÍTULO */}
+<div className="bg-white shadow-lg rounded-xl p-6 border border-slate-200 space-y-4">
 
-    {/* INTRO */}
-    <div className="bg-white shadow-lg rounded-xl p-6 border border-slate-200 space-y-4">
-      <p>
-        O módulo de Escavação do SizerPro calcula automaticamente volumes de vala, berço e reaterro de cada trecho de tubulação da sua rede de drenagem ou esgoto, utilizando diretamente os dados do Pipe Network do Civil 3D.
-      </p>
+<h1 className="text-3xl font-bold text-slate-900 leading-snug">
+  <span className="block">Escavação — Como funciona o módulo e como utilizar
+  </span>
+</h1>
 
-      <p>
-        Ele é ideal para gerar quantitativos confiáveis, exportar planilhas e verificar rapidamente o impacto de profundidades e geometrias da vala ao longo da rede.
-      </p>
-    </div>
+<p className="text-slate-700">
+  O módulo de Escavação do SizerPro calcula automaticamente volumes de vala, 
+  berço e reaterro de cada trecho de tubulação da sua rede de drenagem ou esgoto, 
+  utilizando diretamente os dados do Pipe Network do Civil 3D.
+</p>
 
+<p className="text-slate-700">
+  Ele é ideal para gerar quantitativos confiáveis, exportar planilhas e verificar 
+  rapidamente o impacto de profundidades e geometrias da vala ao longo da rede.
+</p>
+
+</div>
+
+
+    
     {/* COMO FUNCIONA */}
     <div className="bg-white shadow-lg rounded-xl p-6 border border-slate-200 space-y-5">
       <h1 className="text-xl font-semibold">🧩 Como o módulo funciona</h1>
