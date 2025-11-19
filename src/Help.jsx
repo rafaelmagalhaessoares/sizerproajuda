@@ -132,7 +132,7 @@ export default function Help() {
     {/* TÍTULO */}
     <div className="bg-white/70 backdrop-blur-md shadow-xl rounded-2xl p-8 border border-slate-200">
       <h1 className="text-4xl font-extrabold bg-gradient-to-r from-blue-700 to-slate-900 bg-clip-text text-transparent flex items-center gap-3">
-        🚀 Bem-vindo ao SizerPro
+        Bem-vindo ao SizerPro
       </h1>
       <p className="text-slate-700 mt-4 leading-relaxed text-lg">
         O SizerPro é a plataforma profissional de dimensionamento integrada ao 
@@ -147,7 +147,7 @@ export default function Help() {
     {/* SOBRE O PLUGIN */}
     <div className="bg-white/70 backdrop-blur-sm shadow-lg rounded-2xl p-8 border border-slate-200 space-y-5">
       <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-2">
-        💡 O que é o SizerPro?
+      O que é o SizerPro?
       </h2>
 
       <p className="text-slate-700 leading-relaxed">
@@ -167,7 +167,7 @@ export default function Help() {
     {/* MÓDULOS */}
     <div className="bg-white/70 backdrop-blur-sm shadow-xl rounded-2xl p-8 border border-slate-200 space-y-6">
       <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-2">
-        🧩 Módulos disponíveis
+        Módulos disponíveis
       </h2>
 
       <ul className="grid sm:grid-cols-2 gap-6 text-slate-700">
@@ -221,27 +221,11 @@ export default function Help() {
 
     </div>
 
-    {/* VANTAGENS */}
-    <div className="bg-gradient-to-br from-slate-900 to-blue-900 text-white rounded-2xl p-8 shadow-xl space-y-6">
-      <h2 className="text-2xl font-bold flex items-center gap-2">
-        ⭐ Por que usar o SizerPro?
-      </h2>
-
-      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-slate-200">
-        <li>Integração total com o Civil 3D</li>
-        <li>Tabelas interativas e edição instantânea</li>
-        <li>Cálculos automáticos (hidráulicos e volumétricos)</li>
-        <li>Verificações normativas automáticas</li>
-        <li>Exportação premium para Excel e HTML</li>
-        <li>Produtividade 10x maior que planilhas</li>
-        <li>Fluxo de trabalho seguro e sem erros manuais</li>
-      </ul>
-    </div>
-
+    
     {/* FLUXO */}
     <div className="bg-white/70 backdrop-blur-sm shadow-lg rounded-2xl p-8 border border-slate-200 space-y-6">
       <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-2">
-        🔄 Como o SizerPro trabalha
+        Como o SizerPro trabalha
       </h2>
 
       <ol className="list-decimal ml-6 text-slate-700 space-y-2 leading-relaxed">
@@ -256,7 +240,7 @@ export default function Help() {
 
     {/* CTA FINAL */}
     <div className="bg-blue-50 border border-blue-200 p-8 rounded-2xl shadow-md">
-      <h2 className="text-2xl font-bold text-blue-900">🎯 Pronto para elevar seu fluxo de trabalho</h2>
+      <h2 className="text-2xl font-bold text-blue-900">Pronto para elevar seu fluxo de trabalho</h2>
       <p className="text-blue-800 mt-2 leading-relaxed">
         Explore o menu lateral e veja cada módulo em detalhes.<br />
         A eficiência do SizerPro começa agora.
@@ -362,52 +346,78 @@ export default function Help() {
       </ol>
     </div>
 
-    {/* CARD 3 – IDF */}
-    <div className="bg-white shadow-lg rounded-xl p-6 border border-slate-200 space-y-5">
-      <h2 className="text-xl font-semibold flex items-center gap-2">🌧️ Equação de Chuva (IDF)</h2>
+    {/* CARD 3 – IDF + Comandos (unificado) */}
+<div className="bg-white shadow-lg rounded-xl p-6 border border-slate-200 space-y-6">
 
-      <p className="text-slate-700">
-        A equação de chuva é usada para calcular a intensidade da precipitação (i) em função do tempo de concentração (Tc) e do tempo de retorno (Tr).
-        Ela é a base de todo o cálculo de drenagem.
-      </p>
+{/* Título Principal */}
+<h2 className="text-xl font-semibold flex items-center gap-2">
+  🌧️ Equação de Chuva (IDF)
+</h2>
 
-      <h3 className="text-lg font-semibold">Como escrever a equação</h3>
+{/* Introdução */}
+<p className="text-slate-700">
+  A equação de chuva é usada para calcular a intensidade da precipitação (i)
+  em função do tempo de concentração (Tc) e do tempo de retorno (Tr).
+  Ela é a base de todo o cálculo de drenagem.
+</p>
 
-      <p className="text-slate-700">
-        A caixa de texto aceita qualquer expressão matemática, desde que seja em função de <strong>TC</strong> e <strong>TR</strong>.
-      </p>
+{/* Como escrever */}
+<h3 className="text-lg font-semibold">Como escrever a equação</h3>
 
-      <pre className="bg-slate-900 text-green-300 p-4 rounded text-sm overflow-x-auto">
+<p className="text-slate-700">
+  A caixa de texto aceita qualquer expressão matemática, desde que seja
+  em função de <strong>TC</strong> e <strong>TR</strong>.
+</p>
+
+<pre className="bg-slate-900 text-green-300 p-4 rounded text-sm overflow-x-auto">
 (3986.034 * Math.Pow(TR, 0.203)) / Math.Pow(TC + 49.808, 0.93)
-      </pre>
+</pre>
 
-      <p className="text-slate-700">
-        ⚠️ <strong>TC e TR não devem ser substituídos por valores fixos</strong>, pois o programa os alimenta automaticamente.
-      </p>
+{/* Alertas */}
+<p className="text-slate-700">
+  ⚠️ <strong>TC e TR não devem ser substituídos por valores fixos</strong>,
+  pois o programa os alimenta automaticamente.
+</p>
 
-      <p className="text-slate-700">
-        TR pode ser ajustado para cada trecho clicando duas vezes no valor.  
-        Para definir TR para toda a rede → clique com o botão direito → <strong>Definir Todos</strong>.
-      </p>
-    </div>
+<p className="text-slate-700">
+  TR pode ser ajustado para cada trecho clicando duas vezes no valor.
+  Para definir TR para toda a rede → clique com o botão direito →
+  <strong> Definir Todos</strong>.
+</p>
 
-    {/* CARD 4 – Comandos aceitos */}
-    <div className="bg-white shadow-lg rounded-xl p-6 border border-slate-200 space-y-3">
-      <h2 className="text-xl font-semibold flex items-center gap-2">📘 Comandos aceitos na equação</h2>
+{/* Divisor visual */}
+<hr className="border-slate-200" />
 
-      <ul className="list-disc ml-6 text-slate-700 space-y-1">
-  <li><strong><code>Math.Pow(x, y)</code></strong> → usado para elevar um número à potência desejada. Exemplo: <code>Math.Pow(2, 3)</code> calcula 2³ = 8.</li>
+{/* Comandos Aceitos */}
+<h3 className="text-xl font-semibold flex items-center gap-2">
+  📘 Comandos aceitos na equação
+</h3>
 
-  <li><strong><code>Math.Log(x)</code></strong> → retorna o logaritmo natural de x (log base e). Exemplo: <code>Math.Log(Math.E)</code> retorna 1, pois ln(e) = 1.</li>
+<ul className="list-disc ml-6 text-slate-700 space-y-2">
+  <li>
+    <strong><code>Math.Pow(x, y)</code></strong> → usado para elevar um número
+    à potência desejada. Exemplo: <code>Math.Pow(2, 3)</code> calcula 2³ = 8.
+  </li>
 
-  <li><strong><code>Math.Exp(x)</code></strong> → calcula e elevado a x. Exemplo: <code>Math.Exp(2)</code> retorna 7.389, que é e².</li>
+  <li>
+    <strong><code>Math.Log(x)</code></strong> → retorna o logaritmo natural de x
+    (log base e). Exemplo: <code>Math.Log(Math.E)</code> retorna 1.
+  </li>
 
-  <li><strong>Operadores normais: <code>+ - * / ()</code></strong> → permitem somar, subtrair, multiplicar, dividir e organizar a ordem da equação. Exemplo: <code>(2 + 3) * 4</code> resulta em 20.</li>
+  <li>
+    <strong><code>Math.Exp(x)</code></strong> → calcula e elevado a x.
+    Exemplo: <code>Math.Exp(2)</code> retorna 7.389 (e²).
+  </li>
+
+  <li>
+    <strong>Operadores normais: <code>+ - * / ()</code></strong> → permitem somar,
+    subtrair, multiplicar, dividir e controlar a ordem das operações.
+    Exemplo: <code>(2 + 3) * 4</code> resulta em 20.
+  </li>
 </ul>
 
+</div>
 
-
-    </div>
 
     {/* CARD 5 – Dica */}
     <div className="bg-blue-50 border border-blue-200 text-blue-900 p-5 rounded-xl shadow-sm space-y-2">
@@ -421,36 +431,43 @@ export default function Help() {
       <p>O programa aceita qualquer formato de equação IDF.</p>
     </div>
 
-    {/* CARD 6 – Validação */}
-<div className="bg-white shadow-lg rounded-xl p-6 border border-slate-200 space-y-3">
-  <h2 className="text-xl font-semibold flex items-center gap-2">🔎 Validação Automática da IDF</h2>
+    {/* CARD 6 – Validação (unificado com imagem) */}
+<div className="bg-white shadow-lg rounded-xl p-6 border border-slate-200 space-y-4">
 
-  <p className="text-slate-700">Abaixo do campo da equação, o programa exibe um valor de teste para:</p>
+<h2 className="text-xl font-semibold flex items-center gap-2">
+  Validação Automática da IDF
+</h2>
 
-  <ul className="list-disc ml-6 text-slate-700">
-    <li>TR = 10 anos</li>
-    <li>TC = 10 minutos</li>
-  </ul>
+<p className="text-slate-700">
+  Abaixo do campo da equação, o programa exibe um valor de teste para:
+</p>
 
-  <p className="text-slate-700">
-    Se o valor <strong>for plausível</strong> → equação válida  
-    <br />
-    Se aparecer <strong>zero</strong> → erro de sintaxe.
-  </p>
-</div>
+<ul className="list-disc ml-6 text-slate-700">
+  <li>TR = 10 anos</li>
+  <li>TC = 10 minutos</li>
+</ul>
 
-{/* CARD 6.1 – Exemplo Visual da Validação */}
-<div className="bg-white shadow-lg rounded-xl border border-slate-200 p-4">
+<p className="text-slate-700">
+  Se o valor <strong>for plausível</strong> → equação válida  
+  <br />
+  Se aparecer <strong>zero</strong> → erro de sintaxe.
+</p>
+
+{/* Imagem dentro do card */}
+<div className="mt-4">
   <img
     src="/validacao-idf.png"
     alt="Exemplo da Validação Automática da IDF"
-    className="rounded-lg shadow-md w-full"
+    className="rounded-lg border shadow-md w-full"
   />
 </div>
 
+</div>
+
+
 {/* CARD 7 – Atenção */}
 <div className="bg-yellow-50 border border-yellow-300 text-yellow-900 p-5 rounded-xl shadow-sm space-y-2">
-  <h2 className="text-xl font-semibold">⚠️ Atenção Importante</h2>
+  <h2 className="text-xl font-semibold">⚠️ Importante</h2>
 
   <ul className="list-disc ml-6 space-y-1">
     <li>Sempre use <strong>ponto</strong> como separador decimal.</li>
@@ -478,7 +495,7 @@ Q = 0,00278 × I × Σ(C × A)
         <p className="text-slate-700">Onde:</p>
         <ul className="list-disc ml-6 text-slate-700">
           <li>Q = vazão (m³/s)</li>
-          <li>C = coeficiente de escoamento</li>
+          <li>C = coeficiente de escoamento superficial</li>
           <li>I = intensidade (mm/h)</li>
           <li>A = área (ha)</li>
         </ul>
@@ -513,17 +530,12 @@ Q = 0,00278 × n × i × f × A
 
         <h4 className="font-semibold">2.3 Coeficiente m</h4>
         <p>m = 0,0725 × C</p>
-
-        <h4 className="font-semibold">2.4 Fórmula final</h4>
-        <pre className="bg-slate-900 text-green-300 p-4 rounded text-sm overflow-x-auto">
-Q = 0,00278 × n × i × f × A
-        </pre>
-      </div>
+       </div>
     </div>
 
     {/* CARD 9 – Tempo de Concentração */}
     <div className="bg-white shadow-lg rounded-xl p-6 border border-slate-200 space-y-4">
-      <h2 className="text-xl font-semibold">⏱ Tempo de Concentração e Tempo de Percurso</h2>
+      <h2 className="text-xl font-semibold">Tempo de Concentração e Tempo de Percurso</h2>
 
       <p className="text-slate-700">
         O SizerPro calcula automaticamente o <strong>tempo total</strong> usado na IDF:
@@ -539,8 +551,7 @@ Tc_total = Tc (bacia) + Tp (tubos a montante)
   <li>Se houver múltiplas bacias associadas a uma mesma estrutura → usa-se o maior Tc.</li>
   <li>Representa o tempo que a água leva para percorrer toda a bacia até o ponto de saída.</li>
   <li>Influencia diretamente a intensidade da chuva (IDF) usada no cálculo.</li>
-  <li>Unidade normalmente em minutos.</li>
-  <li>O SizerPro calcula automaticamente o Tc lido do Civil 3D ou definido na equação do usuário.</li>
+  <li>O SizerPro obtém automaticamente o Tc lido do Civil 3D, das propriedades das catchments.</li>
 </ul>
 
 
@@ -553,7 +564,7 @@ Tc_total = Tc (bacia) + Tp (tubos a montante)
 
     {/* CARD 10 – Finalização */}
     <div className="bg-green-50 border border-green-200 text-green-800 p-5 rounded-xl shadow-sm">
-      <h2 className="text-xl font-semibold">🔄 Finalizando o Cálculo de Drenagem</h2>
+      <h2 className="text-xl font-semibold">Finalizando o Cálculo de Drenagem</h2>
       <p>Depois de inserir a equação IDF → clique em <strong>Recalcular Rede</strong>.</p>
     </div>
 
@@ -561,7 +572,7 @@ Tc_total = Tc (bacia) + Tp (tubos a montante)
 <div className="bg-white/70 backdrop-blur-md rounded-2xl shadow-xl border border-slate-200 p-8 space-y-8">
 
 <h2 className="text-2xl font-bold bg-gradient-to-r from-blue-700 to-slate-900 bg-clip-text text-transparent">
-  📘 Definição das Colunas do Cálculo de Drenagem
+  Definição das Colunas do Cálculo de Drenagem
 </h2>
 
 {/* TABELA */}
@@ -729,42 +740,101 @@ Tc_total = Tc (bacia) + Tp (tubos a montante)
       </p>
     </div>
 
-    {/* PASSO 2 */}
-    <div className="bg-white/80 backdrop-blur-sm shadow-lg rounded-2xl p-6 border border-slate-200 space-y-5">
-      <h2 className="text-xl font-semibold text-slate-900">2 — Preencha os parâmetros de projeto</h2>
-      <p>Do lado esquerdo existe um painel com todos os parâmetros.<br />Eles estão agrupados em:</p>
+ {/* PASSO 2 */}
+<div className="bg-white/80 backdrop-blur-sm shadow-lg rounded-2xl p-6 border border-slate-200 space-y-5">
+  
+  <h2 className="text-xl font-semibold text-slate-900">
+    2 — Preencha os parâmetros de projeto
+  </h2>
 
-      <div className="space-y-4">
+  <p>
+    Do lado esquerdo existe um painel com todos os parâmetros.<br />
+    Eles estão agrupados em:
+  </p>
 
-        <div>
-          <h3 className="font-semibold text-blue-700 text-lg">🔵 Categoria: População</h3>
-          <ul className="list-disc ml-6 mt-1 space-y-1">
-            <li>Número de Lotes</li>
-            <li>Habitantes por lote</li>
-            <li>Taxa de Crescimento</li>
-            <li>População inicial e final (calculadas automaticamente)</li>
-          </ul>
-        </div>
+  <div className="space-y-4">
 
-        <div>
-          <h3 className="font-semibold text-purple-700 text-lg">🟣 Categoria: Vazões</h3>
-          <ul className="list-disc ml-6 mt-1 space-y-1">
-            <li>Cota Per Capita (L/hab.dia)</li>
-            <li>Coeficiente de Retorno</li>
-            <li>Taxa de Infiltração (L/s·m)</li>
-            <li>Fatores k1 e k2 da NBR</li>
-          </ul>
-        </div>
+  {/* 1️⃣ PARÂMETROS DE PROJETO */}
+  <div>
+    <h3 className="font-semibold -700 text-lg"> Categoria: Parâmetros de Projeto</h3>
 
-        <div>
-          <h3 className="font-semibold text-green-700 text-lg">🟢 Categoria: Rede</h3>
-          <p className="mt-1">- Comprimento considerado nos cálculos (2D ou 3D)</p>
-        </div>
+    <ul className="list-disc ml-6 mt-1 space-y-1 text-slate-700">
+      <li>
+        <strong>Fator k1</strong> — Coeficiente de Máxima Variação Diária.
+      </li>
+      <li>
+        <strong>Fator k2</strong> — Coeficiente de Máxima Variação Horária.
+      </li>
+      <li>
+        <strong>Cota Per Capita (L/hab.dia)</strong> — consumo médio diário utilizado para calcular
+        a demanda total de água e, consequentemente, as vazões de esgoto.
+      </li>
+      <li>
+        <strong>Coeficiente de Retorno</strong> — parcela da água consumida que retorna como esgoto.
+        Geralmente varia entre 0,7 e 0,9 dependendo da norma ou concessionária.
+      </li>
+    </ul>
+  </div>
+{/* Divisor visual */}
+<hr className="border-slate-200" />
+  {/* 2️⃣ POPULAÇÃO */}
+  <div>
+    <h3 className="font-semibold -700 text-lg"> Categoria: População</h3>
 
-      </div>
+    <ul className="list-disc ml-6 mt-1 space-y-1 text-slate-700">
+      <li>
+        <strong>Número de Lotes</strong> — quantidade total de unidades residenciais ou comerciais
+        previstas no projeto.
+      </li>
+      <li>
+        <strong>Habitantes por lote</strong> — média estimada de moradores por lote, usada para
+        estimar a população atendida.
+      </li>
+      <li>
+        <strong>Taxa de Crescimento</strong> — crescimento populacional anual aplicado para projetar
+        a população futura ao longo do horizonte de projeto.
+      </li>
+      <li>
+        <strong>População inicial e final</strong> — valores calculados automaticamente pelo software
+        com base no número de lotes, ocupação e taxa de crescimento.
+      </li>
+    </ul>
+  </div>
+{/* Divisor visual */}
+<hr className="border-slate-200" />
+  {/* 3️⃣ REDE */}
+  <div>
+    <h3 className="font-semibold text -700 text-lg"> Categoria: Rede</h3>
 
-      <p className="text-slate-700">Todos estes valores podem ser alterados a qualquer momento.</p>
-    </div>
+    <ul className="list-disc ml-6 mt-1 space-y-1 text-slate-700">
+      <li>
+        <strong>Comprimento considerado (2D ou 3D)</strong> — define se a modelagem hidráulica usará
+        o comprimento horizontal (2D) ou o comprimento real do tubo no espaço (3D).
+      </li>
+    </ul>
+  </div>
+
+</div>
+
+
+
+  <p className="text-slate-700">
+    Todos estes valores podem ser alterados a qualquer momento.
+  </p>
+
+  {/* IMAGEM INSERIDA DENTRO DO CARD */}
+  <div className="mt-4 flex justify-center">
+  <img
+    src="/parametros_esgoto.png"
+    alt="Parâmetros de Esgoto"
+    className="rounded-lg border border-slate-300 shadow max-w-[300px] w-full"
+  />
+</div>
+
+
+
+</div>
+
 
     {/* PASSO 3 */}
     <div className="bg-white/80 backdrop-blur-sm shadow-lg rounded-2xl p-6 border border-slate-200 space-y-4">
@@ -802,13 +872,12 @@ Tc_total = Tc (bacia) + Tp (tubos a montante)
         <li>Tensões trativas</li>
         <li>Verificação de lâmina</li>
         <li>Comprimento acumulado</li>
-        <li>Destaque e localização do tubo no CAD</li>
       </ul>
     </div>
 
     {/* COMO O CÁLCULO É FEITO */}
     <div className="bg-white/80 backdrop-blur-sm shadow-lg rounded-2xl p-7 border border-slate-200 space-y-6">
-      <h1 className="text-2xl font-bold text-slate-900">🧠 Como o cálculo é feito — Passo a Passo Interno</h1>
+      <h1 className="text-2xl font-bold text-slate-900">Como o cálculo é feito — Passo a Passo Interno</h1>
 
       <div className="space-y-5">
 
@@ -906,7 +975,7 @@ Qmín = 0,0015 m³/s
 
     {/* HIDRÁULICA */}
     <div className="bg-white/80 backdrop-blur-sm shadow-lg rounded-2xl p-7 border border-slate-200 space-y-6">
-      <h1 className="text-xl font-semibold text-slate-900">💧 Cálculo Hidráulico (Seção Parcial)</h1>
+      <h1 className="text-xl font-semibold text-slate-900">Cálculo Hidráulico (Seção Parcial)</h1>
 
       <p>Para cada trecho o SizerPro varre valores de lâmina, calculando:</p>
 
@@ -933,7 +1002,7 @@ Qmín = 0,0015 m³/s
 
     {/* NORMAS */}
     <div className="bg-white/80 backdrop-blur-sm shadow-lg rounded-2xl p-7 border border-slate-200 space-y-6">
-      <h1 className="text-xl font-semibold text-slate-900">📏 Cálculos e Verificações Normativas</h1>
+      <h1 className="text-xl font-semibold text-slate-900">Cálculos e Verificações Normativas</h1>
 
       <ul className="list-disc ml-6 space-y-1">
         <li>Percentual da lâmina</li>
@@ -961,11 +1030,11 @@ Vc = 6 × sqrt(g × Rh)
 
     {/* FERRAMENTAS */}
     <div className="bg-white/80 backdrop-blur-sm shadow-lg rounded-2xl p-7 border border-slate-200 space-y-6">
-      <h1 className="text-xl font-semibold text-slate-900">🧰 Ferramentas Adicionais</h1>
+      <h1 className="text-xl font-semibold text-slate-900">Ferramentas Adicionais</h1>
 
       <div className="space-y-3">
         <div>
-          <h3 className="font-semibold">🗂 Selecionar Colunas</h3>
+          <h3 className="font-semibold"> Selecionar Colunas</h3>
           <p>Permite exibir/ocultar qualquer coluna da tabela.</p>
         </div>
 
