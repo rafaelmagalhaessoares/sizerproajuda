@@ -129,43 +129,39 @@ export default function Help() {
 {tab === "apresentacao" && (
   <section className="max-w-5xl mx-auto space-y-12 animate-fadeIn">
 
-    {/* TÍTULO */}
-    <div className="bg-white/70 backdrop-blur-md shadow-xl rounded-2xl p-8 border border-slate-200">
-      <h1 className="text-4xl font-extrabold bg-gradient-to-r from-blue-700 to-slate-900 bg-clip-text text-transparent flex items-center gap-3">
-        Bem-vindo ao SizerPro
-      </h1>
-      <p className="text-slate-700 mt-4 leading-relaxed text-lg">
-        O SizerPro é a plataforma profissional de dimensionamento integrada ao 
-        Autodesk Civil 3D — criada para quem quer <strong>velocidade</strong>, 
-        <strong>confiabilidade</strong> e <strong>controle total</strong> sobre 
-        projetos de <span className="text-blue-700 font-semibold">drenagem</span>, 
-        <span className="text-blue-700 font-semibold"> esgoto</span> e 
-        <span className="text-blue-700 font-semibold"> escavação</span>.
-      </p>
-    </div>
+    {/* CARD ÚNICO – TÍTULO + DESCRIÇÃO TÉCNICA */}
+<div className="bg-white/70 backdrop-blur-md shadow-xl rounded-xl p-8 border border-slate-200 space-y-5">
+  <h1 className="text-4xl font-extrabold bg-gradient-to-r from-blue-700 to-slate-900 bg-clip-text text-transparent flex items-center gap-3">
+    Bem-vindo ao SizerPro
+  </h1>
 
-    {/* SOBRE O PLUGIN */}
-    <div className="bg-white/70 backdrop-blur-sm shadow-lg rounded-2xl p-8 border border-slate-200 space-y-5">
-      <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-2">
-      O que é o SizerPro?
-      </h2>
+  <p className="text-slate-700 leading-relaxed text-lg mt-3">
+    O SizerPro é um plugin técnico integrado ao Autodesk Civil 3D, projetado
+    para automatizar análises, cálculos e validações em redes de 
+    <span className="text-blue-700 font-semibold"> drenagem</span> e 
+    <span className="text-blue-700 font-semibold"> esgoto.</span>
+  </p>
 
-      <p className="text-slate-700 leading-relaxed">
-        Um conjunto de ferramentas inteligentes que lê diretamente as informações 
-        do <strong>Pipe Network</strong>, organiza os dados da rede, executa 
-        cálculos hidráulicos e volumétricos completos e apresenta tudo em 
-        <strong> tabelas interativas</strong> de alto desempenho.
-      </p>
+  <p className="text-slate-700 leading-relaxed">
+    A ferramenta lê diretamente o <strong>Pipe Network</strong>, interpreta 
+    diâmetros, declividades, cotas, profundidades, conexões e propriedades 
+    geométricas, consolidando tudo em <strong>tabelas interativas</strong> e 
+    painéis de diagnóstico. Com base nesses dados, executa cálculos hidráulicos, 
+    sanitários e volumétricos conforme normas vigentes, garantindo precisão e 
+    padronização em todo o processo.
+  </p>
 
-      <p className="text-slate-700">
-        A ideia é simples: <strong>substituir planilhas</strong>, eliminar erros 
-        manuais e dar ao projetista um fluxo de trabalho moderno, rápido e 
-        totalmente confiável.
-      </p>
-    </div>
+  <p className="text-slate-700 leading-relaxed">
+    O objetivo é oferecer ao projetista um fluxo de trabalho técnico, rápido e 
+    confiável, eliminando planilhas paralelas, reduzindo erros manuais e 
+    centralizando o dimensionamento dentro do próprio Civil 3D.
+  </p>
+</div>
+
+
 
     {/* MÓDULOS */}
-    <div className="bg-white/70 backdrop-blur-sm shadow-xl rounded-2xl p-8 border border-slate-200 space-y-6">
+    <div className="bg-white/70 backdrop-blur-sm shadow-xl rounded-xl p-8 border border-slate-200 space-y-6">
       <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-2">
         Módulos disponíveis
       </h2>
@@ -223,7 +219,7 @@ export default function Help() {
 
     
     {/* FLUXO */}
-    <div className="bg-white/70 backdrop-blur-sm shadow-lg rounded-2xl p-8 border border-slate-200 space-y-6">
+    <div className="bg-white/70 backdrop-blur-sm shadow-lg rounded-xl p-8 border border-slate-200 space-y-6">
       <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-2">
         Como o SizerPro trabalha
       </h2>
@@ -239,7 +235,7 @@ export default function Help() {
     </div>
 
     {/* CTA FINAL */}
-    <div className="bg-blue-50 border border-blue-200 p-8 rounded-2xl shadow-md">
+    <div className="bg-blue-50 border border-blue-200 p-8 rounded-xl shadow-md">
       <h2 className="text-2xl font-bold text-blue-900">Pronto para elevar seu fluxo de trabalho</h2>
       <p className="text-blue-800 mt-2 leading-relaxed">
         Explore o menu lateral e veja cada módulo em detalhes.<br />
@@ -593,7 +589,7 @@ Tc_total = Tc (bacia) + Tp (tubos a montante)
     </div>
 
     {/* CARD 11 – Colunas */}
-<div className="bg-white/70 backdrop-blur-md rounded-2xl shadow-xl border border-slate-200 p-8 space-y-8">
+<div className="bg-white/70 backdrop-blur-md rounded-xl shadow-xl border border-slate-200 p-8 space-y-8">
 
 <h2 className="text-2xl font-bold bg-gradient-to-r from-blue-700 to-slate-900 bg-clip-text text-transparent">
   Definição das Colunas do Cálculo de Drenagem
@@ -749,7 +745,7 @@ Tc_total = Tc (bacia) + Tp (tubos a montante)
   <section className="max-w-4xl space-y-10 animate-fadeIn">
 
    {/* TÍTULO */}
-<div className="bg-white/80 backdrop-blur-sm shadow-xl rounded-2xl p-7 border border-slate-200">
+<div className="bg-white backdrop-blur-sm shadow-xl rounded-xl p-7 border border-slate-200">
   <h1 className="text-3xl font-extrabold flex items-center gap-3 text-slate-900 tracking-tight">
     ▶️ Como usar o módulo de Esgoto — Passo a Passo
   </h1>
@@ -776,7 +772,7 @@ Tc_total = Tc (bacia) + Tp (tubos a montante)
 
 
     {/* PASSO 1 */}
-    <div className="bg-white/80 backdrop-blur-sm shadow-lg rounded-2xl p-6 border border-slate-200 space-y-4">
+    <div className="bg-white/80 backdrop-blur-sm shadow-lg rounded-xl p-6 border border-slate-200 space-y-4">
       <h2 className="text-xl font-semibold text-slate-900">1 — Clique em “Calcular Esgoto” e selecione um tubo</h2>
       <p className="text-slate-700 leading-relaxed">
         O SizerPro abre automaticamente a tabela com todos os tubos, estruturas,
@@ -785,7 +781,7 @@ Tc_total = Tc (bacia) + Tp (tubos a montante)
     </div>
 
  {/* PASSO 2 */}
-<div className="bg-white/80 backdrop-blur-sm shadow-lg rounded-2xl p-6 border border-slate-200 space-y-5">
+<div className="bg-white/80 backdrop-blur-sm shadow-lg rounded-xl p-6 border border-slate-200 space-y-5">
   
   <h2 className="text-xl font-semibold text-slate-900">
     2 — Preencha os parâmetros de projeto
@@ -881,7 +877,7 @@ Tc_total = Tc (bacia) + Tp (tubos a montante)
 
 
     {/* PASSO 3 */}
-    <div className="bg-white/80 backdrop-blur-sm shadow-lg rounded-2xl p-6 border border-slate-200 space-y-4">
+    <div className="bg-white/80 backdrop-blur-sm shadow-lg rounded-xl p-6 border border-slate-200 space-y-4">
       <h2 className="text-xl font-semibold text-slate-900">3 — Defina o Coeficiente de Utilização dos trechos</h2>
 
       <p className="text-slate-700">
@@ -900,7 +896,7 @@ Tc_total = Tc (bacia) + Tp (tubos a montante)
     </div>
 
     {/* PASSO 4 */}
-    <div className="bg-green-50 border border-green-300 shadow-lg rounded-2xl p-6 space-y-3">
+    <div className="bg-green-50 border border-green-300 shadow-lg rounded-xl p-6 space-y-3">
       <h2 className="text-xl font-semibold text-green-800">4 — Clique em “Recalcular Rede”</h2>
 
       <p>Aciona todos os cálculos automaticamente:</p>
@@ -920,7 +916,7 @@ Tc_total = Tc (bacia) + Tp (tubos a montante)
     </div>
 
     {/* COMO O CÁLCULO É FEITO */}
-    <div className="bg-white/80 backdrop-blur-sm shadow-lg rounded-2xl p-7 border border-slate-200 space-y-6">
+    <div className="bg-white/80 backdrop-blur-sm shadow-lg rounded-xl p-7 border border-slate-200 space-y-6">
       <h1 className="text-2xl font-bold text-slate-900">Como o cálculo é feito:</h1>
 
       <div className="space-y-5">
@@ -1018,7 +1014,7 @@ Qmín = 0,0015 m³/s
     </div>
 
     {/* HIDRÁULICA */}
-    <div className="bg-white/80 backdrop-blur-sm shadow-lg rounded-2xl p-7 border border-slate-200 space-y-6">
+    <div className="bg-white/80 backdrop-blur-sm shadow-lg rounded-xl p-7 border border-slate-200 space-y-6">
       <h1 className="text-xl font-semibold text-slate-900">Cálculo Hidráulico (Seção Parcial)</h1>
 
       <p>Para cada trecho o SizerPro varre valores de lâmina, calculando:</p>
@@ -1045,7 +1041,7 @@ Qmín = 0,0015 m³/s
     </div>
 
     {/* NORMAS */}
-    <div className="bg-white/80 backdrop-blur-sm shadow-lg rounded-2xl p-7 border border-slate-200 space-y-6">
+    <div className="bg-white/80 backdrop-blur-sm shadow-lg rounded-xl p-7 border border-slate-200 space-y-6">
       <h1 className="text-xl font-semibold text-slate-900">Cálculos e Verificações Normativas</h1>
 
       <ul className="list-disc ml-6 space-y-1">
@@ -1073,7 +1069,7 @@ Vc = 6 × sqrt(g × Rh)
     </div>
 
     {/* FERRAMENTAS */}
-    <div className="bg-white/80 backdrop-blur-sm shadow-lg rounded-2xl p-7 border border-slate-200 space-y-6">
+    <div className="bg-white/80 backdrop-blur-sm shadow-lg rounded-xl p-7 border border-slate-200 space-y-6">
       <h1 className="text-xl font-semibold text-slate-900">Ferramentas Adicionais</h1>
 
       <div className="space-y-3">
@@ -1095,7 +1091,7 @@ Vc = 6 × sqrt(g × Rh)
     </div>
 
     {/* COLUNAS */}
-<div className="bg-white/80 backdrop-blur-sm shadow-lg rounded-2xl p-7 border border-slate-200">
+<div className="bg-white/80 backdrop-blur-sm shadow-lg rounded-xl p-7 border border-slate-200">
   <h1 className="text-xl font-bold mb-4 text-slate-900">🧾 Colunas do Cálculo de Esgoto</h1>
 
 
@@ -1272,7 +1268,7 @@ Vc = 6 × sqrt(g × Rh)
 
 
     {/* FINAL */}
-    <div className="bg-green-50 border border-green-300 p-7 rounded-2xl shadow-sm">
+    <div className="bg-green-50 border border-green-300 p-7 rounded-xl shadow-sm">
       <h1 className="text-xl font-semibold text-green-900">✔️ Finalizando o Cálculo</h1>
       <p className="text-slate-700 mt-2 leading-relaxed">
         Quando tudo estiver configurado:<br />
