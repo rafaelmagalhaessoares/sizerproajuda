@@ -38,12 +38,22 @@ export default function Help() {
 <aside
   className={`
     w-64 bg-slate-900 text-slate-100 p-6 space-y-4 flex-shrink-0
-    h-screen overflow-y-auto
-    fixed md:static top-0 left-0 z-50
+    overflow-y-auto
+
+    /* MOBILE: retrátil e sempre fixed */
+    fixed top-0 left-0 h-full z-50
+
+    /* DESKTOP: sidebar fixo no topo, mas NÃO fixed */
+    md:static md:sticky md:top-0 md:h-screen md:z-auto
+
     transform transition-transform duration-300
     ${menuOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"}
   `}
 >
+
+
+
+
 
   <h2 className="text-lg font-semibold mb-4 flex items-center gap-2">
     <BookOpen size={20} /> Menu
