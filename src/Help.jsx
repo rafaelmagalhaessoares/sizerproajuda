@@ -16,6 +16,7 @@ export default function Help() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
+    
     <div className="w-full min-h-screen bg-slate-50 text-slate-800 flex">
 
       {/* BOTÃO MOBILE – aparece apenas no celular */}
