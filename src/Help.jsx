@@ -583,11 +583,67 @@ Tc_total = Tc (bacia) + Tp (tubos a montante)
       <p>Tempo de Concentração Total = Tc_bacia + Tp</p>
     </div>
 
-    {/* CARD 10 – Finalização */}
-    <div className="bg-green-50 border border-green-200 text-green-800 p-5 rounded-xl shadow-sm">
-      <h2 className="text-xl font-semibold">Finalizando o Cálculo de Drenagem</h2>
-      <p>Depois de inserir a equação IDF → clique em <strong>Recalcular Rede</strong>.</p>
-    </div>
+    {/* CARD 10 – Velocidade e Lâmina */}
+<div className="bg-white shadow-lg rounded-xl p-6 border border-slate-200 space-y-4">
+  <h2 className="text-xl font-semibold">Velocidade, Lâmina e Percentual da Seção</h2>
+
+  <p className="text-slate-700">
+    Após o cálculo da vazão em cada trecho, o SizerPro determina
+    automaticamente a <strong>lâmina de escoamento</strong> e a 
+    <strong> velocidade</strong> no interior do tubo. Esses parâmetros são 
+    essenciais para verificar se o trecho atende às normas e boas práticas 
+    de drenagem.
+  </p>
+
+  <h3 className="font-semibold">🔹 Velocidade (m/s)</h3>
+  <p className="text-slate-700">
+    A velocidade é calculada pela fórmula de Manning, considerando a área 
+    molhada, o raio hidráulico e a declividade do tubo.
+  </p>
+
+  <pre className="bg-slate-900 text-green-300 p-4 rounded text-sm overflow-x-auto">
+V = (1/n) * Rh^(2/3) * √i
+  </pre>
+
+  <ul className="list-disc ml-6 text-slate-700 space-y-1">
+    <li><strong>n</strong> → Coeficiente de Manning.</li>
+    <li><strong>Rh</strong> → Raio hidráulico (A/P).</li>
+    <li><strong>i</strong> → Declividade do trecho.</li>
+    <li>O SizerPro destaca em <strong>vermelho</strong> velocidades fora dos limites definidos.</li>
+  </ul>
+
+  <h3 className="font-semibold">🔹 Lâmina de escoamento (y)</h3>
+  <p className="text-slate-700">
+    A lâmina é a altura da água dentro do tubo. Ela é obtida iterando valores
+    até encontrar o ponto em que a capacidade do tubo (Qcalc) se iguala à 
+    vazão de projeto.
+  </p>
+
+  <pre className="bg-slate-900 text-green-300 p-4 rounded text-sm overflow-x-auto">
+Q = A(y) * V(y)
+  </pre>
+
+  <p className="text-slate-700">
+    O algoritmo compara a vazão desejada com a vazão calculada e encontra a
+    melhor solução para a altura y.
+  </p>
+
+  <h3 className="font-semibold">🔹 Percentual da seção preenchida</h3>
+  <p className="text-slate-700">
+    Representa o quanto da altura total do tubo está sendo ocupada pelo fluxo:
+  </p>
+
+  <pre className="bg-slate-900 text-green-300 p-4 rounded text-sm overflow-x-auto">
+%Lâmina = (y / D) * 100
+  </pre>
+
+  <p className="text-slate-700">
+    O SizerPro alerta automaticamente quando o trecho ultrapassa o limite 
+    definido em “Lâmina Máxima (%)”.
+  </p>
+</div>
+
+
 
     {/* CARD 11 – Colunas */}
 <div className="bg-white/70 backdrop-blur-md rounded-xl shadow-xl border border-slate-200 p-8 space-y-8">
@@ -732,8 +788,17 @@ Tc_total = Tc (bacia) + Tp (tubos a montante)
     </tbody>
   </table>
 </div>
-</div>
 
+</div>
+{/* FINAL */}
+<div className="bg-green-50 border border-green-300 p-7 rounded-xl shadow-sm">
+      <h1 className="text-xl font-semibold text-green-900">✔️ Finalizando o Cálculo</h1>
+      <p className="text-slate-700 mt-2 leading-relaxed">
+        Quando tudo estiver configurado:<br />
+        → clique em <strong>Recalcular Rede</strong><br />
+        O SizerPro processa tudo e atualiza a tabela.
+      </p>
+    </div>
   </section>
 )}
 
@@ -780,6 +845,28 @@ Tc_total = Tc (bacia) + Tp (tubos a montante)
         comprimentos, declividades, diâmetros e suas propriedades lidas do Civil 3D.
       </p>
     </div>
+
+    {/* CARD – Validação da Rede */}
+<div className="bg-blue-50 border border-blue-200 text-blue-900 p-5 rounded-xl shadow-sm space-y-2">
+    <h2 className="text-xl font-semibold flex items-center gap-2">
+    Validação da Rede de Esgoto
+  </h2>
+
+  <p className="text-slate-700 leading-relaxed">
+    Antes de iniciar os cálculos, o SizerPro realiza uma <strong>validação completa</strong> da sua rede de esgoto para garantir que todos os trechos estão conectados corretamente e que a topologia da rede está consistente.
+  </p>
+
+  <ul className="list-disc list-inside space-y-2 text-slate-700 leading-relaxed">
+    <li>Verifica se <strong>todos os tubos possuem estrutura de montante e jusante</strong>.</li>
+    <li>Verifica se cada estrutura possui <strong>no máximo 1 tubo de saída</strong>.</li>
+    <li>Confirma a existência de ao menos <strong>um ponto de descarga</strong>.</li>
+    <li>Garante que não existam <strong>partes desconectadas</strong> ou trechos isolados no Pipe Network.</li>
+  </ul>
+
+  <p className="text-slate-700">
+    Caso seja encontrada alguma inconsistência, o SizerPro exibe uma lista com os erros detectados para que você corrija antes de avançar para a etapa de cálculo hidráulico.
+  </p>
+</div>
 
  {/* PASSO 2 */}
 <div className="bg-white/80 backdrop-blur-sm shadow-lg rounded-xl p-6 border border-slate-200 space-y-5">
@@ -883,7 +970,8 @@ Tc_total = Tc (bacia) + Tp (tubos a montante)
 
       <p className="text-slate-700">
         <strong>Coeficiente de Utilização</strong><br />
-        → controla a fração de vazão domiciliar atribuída ao trecho.
+        → controla a fração de vazão domiciliar atribuída ao trecho.<br />
+        Por padrão, o SizerPro utiliza Cof. de Utilização = 1. Altere nos trechos que desejar. 
       </p>
 
       <p className="text-slate-700">Exemplos:</p>
@@ -937,138 +1025,246 @@ Tc_total = Tc (bacia) + Tp (tubos a montante)
           </ul>
         </div>
 
-        {/* CONTRIBUIÇÃO DOMICILIAR */}
-        <div>
-          <h2 className="text-xl font-semibold text-slate-900">2 — Cálculo da contribuição domiciliar</h2>
+{/* POPULAÇÃO */}
+<div>
+  <h2 className="text-xl font-semibold text-slate-900">1 — Cálculo da População</h2>
 
-          <h3 className="font-semibold mt-2">🔹 Contribuição inicial (início de plano)</h3>
-          <pre className="bg-slate-900 text-green-300 p-4 rounded-lg text-sm overflow-x-auto">
-Qdom,início = (N_lotes * H * taxa_crescimento * cota_per_capita / 86400
-          </pre>
+  <h3 className="font-semibold mt-2">🔹 População de início de plano</h3>
+  <pre className="bg-slate-900 text-green-300 p-4 rounded-lg text-sm overflow-x-auto">
+Pop_início = N_lotes × H × taxa_crescimento
+  </pre>
 
-          <h3 className="font-semibold mt-3">🔹 Contribuição final (final de plano)</h3>
-          <pre className="bg-slate-900 text-green-300 p-4 rounded-lg text-sm overflow-x-auto">
-Qdom,final = (N_lotes * H * cota_per_capita * Cr) / 86400
-          </pre>
+  <h3 className="font-semibold mt-2">🔹 População de final de plano</h3>
+  <pre className="bg-slate-900 text-green-300 p-4 rounded-lg text-sm overflow-x-auto">
+Pop_final = N_lotes × H
+  </pre>
 
-          <p className="mt-2">O programa usa automaticamente estes valores.</p>
-        </div>
+  <p className="mt-2">
+    Onde:<br />
+    • <strong>N_lotes</strong>: número de lotes atendidos<br />
+    • <strong>H</strong>: habitantes por lote<br />
+    • <strong>taxa_crescimento</strong>: fator de crescimento usado apenas no início de plano
+  </p>
+</div>
 
-        {/* INFILTRAÇÃO */}
-        <div>
-          <h2 className="text-xl font-semibold text-slate-900">3 — Vazão de infiltração</h2>
-          <pre className="bg-slate-900 text-green-300 p-4 rounded-lg text-sm overflow-x-auto">
-Qinf = L_real × taxa_infiltração
-          </pre>
-        </div>
 
-        {/* VAZAO LINEAR */}
-        <div>
-          <h2 className="text-xl font-semibold text-slate-900">4 — Vazão por lote convertida para vazão linear</h2>
-          <p>O SizerPro transforma a vazão total em vazão distribuída por metro:</p>
+{/* CONTRIBUIÇÃO DOMICILIAR */}
+<div>
+  <h2 className="text-xl font-semibold text-slate-900">2 — Contribuição Domiciliar</h2>
 
-          <pre className="bg-slate-900 text-green-300 p-4 rounded-lg text-sm overflow-x-auto">
+  <h3 className="font-semibold mt-2">🔹 Início de plano</h3>
+  <pre className="bg-slate-900 text-green-300 p-4 rounded-lg text-sm overflow-x-auto">
+Q_dom,início = (Pop_início × cota_per_capita × coef_ret) / 86400
+  </pre>
+
+  <h3 className="font-semibold mt-3">🔹 Final de plano</h3>
+  <pre className="bg-slate-900 text-green-300 p-4 rounded-lg text-sm overflow-x-auto">
+Q_dom,final = (Pop_final × cota_per_capita × coef_ret) / 86400
+  </pre>
+
+  <p className="mt-2">
+    Onde:<br />
+    • <strong>cota_per_capita</strong>: consumo médio por habitante (L/hab·dia)<br />
+    • <strong>coef_ret</strong>: coeficiente de retorno (fração que retorna para a rede)<br />
+    • <strong>86400</strong>: segundos do dia (para converter L/dia → L/s)
+  </p>
+</div>
+
+
+{/* INFILTRAÇÃO */}
+<div>
+  <h2 className="text-xl font-semibold text-slate-900">3 — Vazão de Infiltração</h2>
+  <pre className="bg-slate-900 text-green-300 p-4 rounded-lg text-sm overflow-x-auto">
+Q_inf = L_real × taxa_infiltração
+  </pre>
+
+  <p className="mt-2">
+    Onde:<br />
+    • <strong>L_real</strong>: soma dos comprimentos reais da rede<br />
+    • <strong>taxa_infiltração</strong>: infiltração por metro (L/s·m)
+  </p>
+</div>
+
+
+{/* VAZÃO INÍCIO DE PLANO */}
+<div>
+  <h2 className="text-xl font-semibold text-slate-900">4 — Vazão Total: Início de Plano</h2>
+  <pre className="bg-slate-900 text-green-300 p-4 rounded-lg text-sm overflow-x-auto">
+Q_início = (Q_dom,início × K2) + Q_inf
+  </pre>
+
+  <p className="mt-2">
+    Onde:<br />
+    • <strong>Q_inf</strong>: infiltração total da rede
+  </p>
+</div>
+
+
+{/* VAZÃO FINAL DE PLANO */}
+<div>
+  <h2 className="text-xl font-semibold text-slate-900">5 — Vazão Total: Final de Plano</h2>
+  <pre className="bg-slate-900 text-green-300 p-4 rounded-lg text-sm overflow-x-auto">
+Q_final = (Q_dom,final × K1 × K2) + Q_inf
+  </pre>
+
+</div>
+
+
+{/* VAZÃO + PONTUAL */}
+<div>
+  <h2 className="text-xl font-semibold text-slate-900">
+    6 — Vazão Total incluindo Vazões Pontuais
+  </h2>
+
+  <h3 className="font-semibold mt-2">🔹 Início de Plano</h3>
+  <pre className="bg-slate-900 text-green-300 p-4 rounded-lg text-sm overflow-x-auto">
+Q_início_total = Q_início + Σ(Q_pontual)
+  </pre>
+
+  <h3 className="font-semibold mt-3">🔹 Final de Plano</h3>
+  <pre className="bg-slate-900 text-green-300 p-4 rounded-lg text-sm overflow-x-auto">
+Q_final_total = Q_final + Σ(Q_pontual)
+  </pre>
+
+  <p className="mt-2">As vazões pontuais são acumuladas somente para trechos a jusante do ponto de contribuição.</p>
+</div>
+
+
+{/* VAZÃO LINEAR */}
+<div>
+  <h2 className="text-xl font-semibold text-slate-900">7 — Vazão Linear</h2>
+  <p>A vazão total da rede é distribuída ao longo do comprimento fictício:</p>
+
+  <pre className="bg-slate-900 text-green-300 p-4 rounded-lg text-sm overflow-x-auto">
 q_lin = Q_total / L_fictício
-          </pre>
+  </pre>
 
-          <p>Usando o coeficiente de utilização para ponderar.</p>
-        </div>
+  <p className="mt-2">
+    O uso do <strong>coeficiente de utilização (Cutil)</strong> pondera esse comprimento para cada trecho.
+  </p>
+</div>
 
-        {/* CONTRIBUIÇÃO POR TRECHO */}
-        <div>
-          <h2 className="text-xl font-semibold text-slate-900">5 — Contribuição por trecho</h2>
 
-          <h3 className="font-semibold mt-2">Se Cutil = 0</h3>
-          <p>Apenas infiltração:</p>
-          <pre className="bg-slate-900 text-green-300 p-4 rounded-lg text-sm overflow-x-auto">
-Qi = L × q_inf
-          </pre>
+{/* CONTRIBUIÇÃO POR TRECHO */}
+<div>
+  <h2 className="text-xl font-semibold text-slate-900">8 — Contribuição por Trecho</h2>
 
-          <h3 className="font-semibold mt-4">Se Cutil é maior que 0</h3>
-          <pre className="bg-slate-900 text-green-300 p-4 rounded-lg text-sm overflow-x-auto">
-Qi = L × (Cutil × q_dom + q_inf)
-          </pre>
-        </div>
+  <h3 className="font-semibold mt-2">🔹 Se Cutil = 0</h3>
+  <p>Apenas infiltração:</p>
+  <pre className="bg-slate-900 text-green-300 p-4 rounded-lg text-sm overflow-x-auto">
+Q_trecho = L_trecho × q_inf
+  </pre>
 
-        {/* ACUMULADA */}
-        <div>
-          <h2 className="text-xl font-semibold text-slate-900">6 — Vazão acumulada por trecho</h2>
-          <p>A rede é percorrida de <strong>montante para jusante</strong>, somando contribuições.</p>
-        </div>
+  <h3 className="font-semibold mt-4">🔹 Se Cutil &gt; 0</h3>
+  <pre className="bg-slate-900 text-green-300 p-4 rounded-lg text-sm overflow-x-auto">
+Q_trecho = L_trecho × (Cutil × q′_dom) + L_trecho × q_inf
+  </pre>
 
-        {/* VAZAO ADOTADA */}
-        <div>
-          <h2 className="text-xl font-semibold text-slate-900">7 — Vazão adotada</h2>
-          <p>Converte para m³/s:</p>
+  <p className="mt-2">
+    Onde:<br />
+    • <strong>q′_dom</strong> = vazão domiciliar linear (início ou final de plano)<br />
+    • <strong>q_inf</strong> = infiltração (L/s·m)<br />
+    • A contribuição é calculada separadamente para início e final de plano. <br />
 
-          <pre className="bg-slate-900 text-green-300 p-4 rounded-lg text-sm overflow-x-auto">
-Q = Q_L/s / 1000
-          </pre>
+      <strong>Cutil</strong> — Coeficiente de utilização da rede. Quando há duas redes na mesma rua, costuma-se usar 0,5. Quando há apenas uma rede na rua, costuma-se usar 1. Isso varia 
+      conforme a concessionária local. É importante consultar antes de alterar o valor de 1.
+      </p>
+  
+</div>
 
-          <p>Com mínimo normativo:</p>
-          <pre className="bg-slate-900 text-green-300 p-4 rounded-lg text-sm overflow-x-auto">
-Qmín = 0,0015 m³/s
-          </pre>
-        </div>
+
+
+{/* ACUMULADA */}
+<div>
+  <h2 className="text-xl font-semibold text-slate-900">9 — Vazão Acumulada</h2>
+  <p>A rede é percorrida de <strong>montante → jusante</strong>, somando as contribuições de cada trecho e somando também as vazões pontuais.</p>
+</div>
+
+
+{/* VAZÃO ADOTADA */}
+<div>
+  <h2 className="text-xl font-semibold text-slate-900">10 — Vazão Adotada</h2>
+  <p>A vazão respeita o valor mínimo normativo:</p>
+
+  <pre className="bg-slate-900 text-green-300 p-4 rounded-lg text-sm overflow-x-auto">
+Q_mín = 0,0015 m³/s
+  </pre>
+</div>
+
+
 
       </div>
     </div>
 
-    {/* HIDRÁULICA */}
-    <div className="bg-white/80 backdrop-blur-sm shadow-lg rounded-xl p-7 border border-slate-200 space-y-6">
-      <h1 className="text-xl font-semibold text-slate-900">Cálculo Hidráulico (Seção Parcial)</h1>
+    {/* CARD – Hidráulica do Esgoto */}
+<div className="bg-white shadow-lg rounded-xl p-6 border border-slate-200 space-y-4">
+  <h2 className="text-xl font-semibold">Velocidade, Lâmina e Escoamento Parcial</h2>
 
-      <p>Para cada trecho o SizerPro varre valores de lâmina, calculando:</p>
+  <p className="text-slate-700">
+    No módulo de <strong>esgoto</strong>, o SizerPro calcula automaticamente
+    a lâmina de escoamento, a velocidade e todos os parâmetros hidráulicos
+    associados ao funcionamento do tubo em seção parcial. Esses dados são
+    essenciais para verificar autolimpeza, evitar sedimentação e garantir
+    conformidade com normas de esgotamento sanitário.
+  </p>
 
-      <ul className="list-disc ml-6 space-y-1">
-        <li>Área molhada</li>
-        <li>Perímetro molhado</li>
-        <li>Raio hidráulico</li>
-        <li>Velocidade (Manning)</li>
-        <li>Vazão resultante</li>
-        <li>Ângulo (θ)</li>
-      </ul>
+  <h3 className="font-semibold">🔹 O que é calculado a cada incremento de lâmina</h3>
 
-      <h3 className="font-semibold">Equações utilizadas</h3>
+  <ul className="list-disc ml-6 text-slate-700 space-y-1">
+    <li><strong>Área molhada</strong> A(y)</li>
+    <li><strong>Perímetro molhado</strong> P(y)</li>
+    <li><strong>Raio hidráulico</strong> Rh = A/P</li>
+    <li><strong>Velocidade</strong> (equação de Manning)</li>
+    <li><strong>Vazão resultante</strong> Q = A × V</li>
+    <li><strong>Ângulo central</strong> θ (geometria do escoamento parcial)</li>
+    <li><strong>Tensão trativa</strong> τ = 10.000 × Rh × S</li>
+  </ul>
 
-      <pre className="bg-slate-900 text-green-300 p-4 rounded-xl">
-  <code>
-    V = (1/n) × Rh^(2/3) × S^(1/2) <br />
-    Q = A × V <br />
-    θ = 2 × acos((r - y) / r)
-  </code>
-</pre>
+  <p className="text-slate-700">
+    O algoritmo testa valores de y, encontrando a lâmina que gera
+    a vazão desejada no início e no fim de plano.
+  </p>
+
+  <h3 className="font-semibold">🔹 Equações utilizadas</h3>
+
+  <pre className="bg-slate-900 text-green-300 p-4 rounded-xl text-sm overflow-x-auto">
+V = (1/n) × Rh^(2/3) × √S  <br />
+Q = A × V  <br />
+θ = 2 × acos((r - y) / r)
+  </pre>
+
+  <h3 className="font-semibold">🔹 Percentual da seção utilizada</h3>
+  <p className="text-slate-700">
+    Mede quanto da altura total do tubo está ocupada pelo esgoto:
+  </p>
+
+  <pre className="bg-slate-900 text-green-300 p-4 rounded text-sm overflow-x-auto">
+%Lâmina = (y / D) × 100
+  </pre>
+
+  <p className="text-slate-700">
+    O SizerPro aplica automaticamente coloração verde/vermelha quando o valor
+    ultrapassa o limite configurado na regra <strong>“% Lâmina Máxima”</strong>.
+  </p>
+
+  <h3 className="font-semibold">🔹 Tensão trativa (autolimpeza)</h3>
+  <p className="text-slate-700">
+    A tensão trativa é usada para avaliar se o escoamento possui energia
+    suficiente para transportar sólidos e evitar deposição:
+  </p>
+
+  <pre className="bg-slate-900 text-green-300 p-4 rounded text-sm overflow-x-auto">
+τ = 10.000 × Rh × S
+  </pre>
+
+  <p className="text-slate-700">
+    O programa destaca automaticamente valores abaixo do limite definido em
+    <strong>“Tensão Trativa Mínima”</strong>.
+  </p>
 
     </div>
 
-    {/* NORMAS */}
-    <div className="bg-white/80 backdrop-blur-sm shadow-lg rounded-xl p-7 border border-slate-200 space-y-6">
-      <h1 className="text-xl font-semibold text-slate-900">Cálculos e Verificações Normativas</h1>
-
-      <ul className="list-disc ml-6 space-y-1">
-        <li>Percentual da lâmina</li>
-        <li>Tensão trativa</li>
-      </ul>
-
-      <pre className="bg-slate-900 text-green-300 p-4 rounded-lg text-sm overflow-x-auto">
-τ = 10000 × Rh × S
-      </pre>
-
-      <p>Velocidade crítica:</p>
-
-      <pre className="bg-slate-900 text-green-300 p-4 rounded-lg text-sm overflow-x-auto">
-Vc = 6 × sqrt(g × Rh)
-      </pre>
-
-      <p>As células mudam de cor para indicar:</p>
-
-      <ul className="list-disc ml-6 space-y-1">
-        <li>lâmina acima do limite</li>
-        <li>velocidade fora do intervalo</li>
-        <li>tensão trativa insuficiente</li>
-      </ul>
-    </div>
-
+   
     {/* FERRAMENTAS */}
     <div className="bg-white/80 backdrop-blur-sm shadow-lg rounded-xl p-7 border border-slate-200 space-y-6">
       <h1 className="text-xl font-semibold text-slate-900">Ferramentas Adicionais</h1>
