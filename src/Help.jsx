@@ -159,6 +159,28 @@ export default function Help() {
   </p>
 </div>
 
+{/* CARD — Requisitos */}
+<div className="bg-yellow-50 border border-yellow-300 p-6 rounded-xl shadow-lg mt-10">
+  <h3 className="text-2xl font-bold text-yellow-900 flex items-center gap-2">
+    ⚙️ Requisitos para usar o SizerPro
+  </h3>
+
+  <p className="text-slate-800 mt-3 leading-relaxed">
+    Para que todos os módulos funcionem corretamente, é obrigatório que o usuário tenha instalado:
+  </p>
+
+  <ul className="list-disc ml-6 mt-3 text-slate-800 space-y-1">
+    <li>
+      <strong>Autodesk Civil 3D 2026</strong> instalado e autorizado na máquina.
+    </li>
+  </ul>
+
+  <p className="text-slate-700 mt-3">
+    O SizerPro foi desenvolvido e testado especificamente para a versão 2026 do Civil 3D, 
+    garantindo total compatibilidade e estabilidade durante o uso.
+  </p>
+</div>
+
 
 
     {/* MÓDULOS */}
@@ -243,6 +265,20 @@ export default function Help() {
         A eficiência do SizerPro começa agora.
       </p>
     </div>
+{/* CARD — Suporte */}
+<div className="mt-12 bg-slate-900 text-white p-6 rounded-xl shadow-lg border border-slate-700">
+  <h3 className="text-xl font-semibold mb-2"> Ficou com alguma dúvida?</h3>
+  <p className="opacity-90 leading-relaxed">
+    Nossa equipe está pronta para te ajudar.  
+    Envie sua pergunta para: 
+    <a
+       href= "mailto:atendimento@rafaelsoares.eng.br"
+      className="underline text-blue-300 hover:text-blue-200"
+    >
+      atendimento@rafaelsoares.eng.br
+    </a>
+  </p>
+</div>
 
   </section>
 )}
@@ -306,7 +342,20 @@ export default function Help() {
         <li>Licenças expiradas permanecem inativas até regularização.</li>
       </ul>
     </div>
-
+{/* CARD — Suporte */}
+<div className="mt-12 bg-slate-900 text-white p-6 rounded-xl shadow-lg border border-slate-700">
+  <h3 className="text-xl font-semibold mb-2"> Ficou com alguma dúvida?</h3>
+  <p className="opacity-90 leading-relaxed">
+    Nossa equipe está pronta para te ajudar.  
+    Envie sua pergunta para: 
+    <a
+       href= "mailto:atendimento@rafaelsoares.eng.br"
+      className="underline text-blue-300 hover:text-blue-200"
+    >
+      atendimento@rafaelsoares.eng.br
+    </a>
+  </p>
+</div>
   </section>
 )}
 
@@ -799,6 +848,20 @@ Q = A(y) * V(y)
         O SizerPro processa tudo e atualiza a tabela.
       </p>
     </div>
+    {/* CARD — Suporte */}
+<div className="mt-12 bg-slate-900 text-white p-6 rounded-xl shadow-lg border border-slate-700">
+  <h3 className="text-xl font-semibold mb-2"> Ficou com alguma dúvida?</h3>
+  <p className="opacity-90 leading-relaxed">
+    Nossa equipe está pronta para te ajudar.  
+    Envie sua pergunta para: 
+    <a
+       href= "mailto:atendimento@rafaelsoares.eng.br"
+      className="underline text-blue-300 hover:text-blue-200"
+    >
+      atendimento@rafaelsoares.eng.br
+    </a>
+  </p>
+</div>
   </section>
 )}
 
@@ -1473,7 +1536,20 @@ Q = A × V  <br />
         O SizerPro processa tudo e atualiza a tabela.
       </p>
     </div>
-
+{/* CARD — Suporte */}
+<div className="mt-12 bg-slate-900 text-white p-6 rounded-xl shadow-lg border border-slate-700">
+  <h3 className="text-xl font-semibold mb-2"> Ficou com alguma dúvida?</h3>
+  <p className="opacity-90 leading-relaxed">
+    Nossa equipe está pronta para te ajudar.  
+    Envie sua pergunta para: 
+    <a
+       href= "mailto:atendimento@rafaelsoares.eng.br"
+      className="underline text-blue-300 hover:text-blue-200"
+    >
+      atendimento@rafaelsoares.eng.br
+    </a>
+  </p>
+</div>
   </section>
 )}
 
@@ -1785,7 +1861,20 @@ Reaterro = Escavação − Volume do tubo − Volume do berço
       </div>
 
     </div>
-
+{/* CARD — Suporte */}
+<div className="mt-12 bg-slate-900 text-white p-6 rounded-xl shadow-lg border border-slate-700">
+  <h3 className="text-xl font-semibold mb-2"> Ficou com alguma dúvida?</h3>
+  <p className="opacity-90 leading-relaxed">
+    Nossa equipe está pronta para te ajudar.  
+    Envie sua pergunta para: 
+    <a
+       href= "mailto:atendimento@rafaelsoares.eng.br"
+      className="underline text-blue-300 hover:text-blue-200"
+    >
+      atendimento@rafaelsoares.eng.br
+    </a>
+  </p>
+</div>
   </section> 
 
   
@@ -1938,7 +2027,20 @@ Reaterro = Escavação − Volume do tubo − Volume do berço
       </div>
 
     </div>
-
+{/* CARD — Suporte */}
+<div className="mt-12 bg-slate-900 text-white p-6 rounded-xl shadow-lg border border-slate-700">
+  <h3 className="text-xl font-semibold mb-2"> Ficou com alguma dúvida?</h3>
+  <p className="opacity-90 leading-relaxed">
+    Nossa equipe está pronta para te ajudar.  
+    Envie sua pergunta para: 
+    <a
+       href= "mailto:atendimento@rafaelsoares.eng.br"
+      className="underline text-blue-300 hover:text-blue-200"
+    >
+      atendimento@rafaelsoares.eng.br
+    </a>
+  </p>
+</div>
   </section>
 )}
 
