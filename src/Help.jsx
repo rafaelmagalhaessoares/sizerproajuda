@@ -338,7 +338,7 @@ export default function Help() {
       <h3 className="font-semibold mb-1">⚠️ Importante</h3>
       <ul className="list-disc list-inside space-y-1">
         <li>Cada licença é vinculada a um computador específico.</li>
-        <li>Para trocar de máquina, entre em contato com o suporte.</li>
+        <li>Para trocar de máquina, você pode clicar em "Validar Licença" e na Janela seguinte: "Resetar Licença". Caso econtre alguma dificuldade, entre em contato com o suporte.</li>
         <li>Licenças expiradas permanecem inativas até regularização.</li>
       </ul>
     </div>
@@ -583,7 +583,9 @@ Q = 0,00278 × I × Σ(C × A)
       <div className="space-y-3">
         <h3 className="text-lg font-semibold"> 2. Método Racional Modificado (Fantolli)</h3>
 
-        <p>Usado por prefeituras.</p>
+        <p>Usado para estimar vazão de pico (Q) com coeficientes de ajuste. Caso queira se aprofundar nesse métido, o Manual da Rio-Águas trás mais informações. 
+
+</p>
 
         <pre className="bg-slate-900 text-green-300 p-4 rounded text-sm overflow-x-auto">
 Q = 0,00278 × n × i × f × A
